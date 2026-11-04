@@ -1,17 +1,22 @@
-# Rayudu Clickz Studio website starter
+# Rayudu Clickz Studio Website
 
-## Upload to GitHub Pages
-1. Extract this ZIP on your computer.
-2. Open your `rayudu-clickz-studio` GitHub repository.
-3. Select **Add file → Upload files**.
-4. Upload the contents of this folder: `index.html`, `style.css`, `script.js`, and the `assets` folder.
-5. Commit changes to the `main` branch.
-6. Wait for GitHub Pages to publish.
+A responsive, single-page wedding photography and cinematography website starter for Rayudu Clickz Studio.
 
-## Before public launch
-- Replace the sample portfolio photos with approved studio photographs.
-- Add the correct WhatsApp number and connect the enquiry form.
-- Add real package details, phone number, address and social links.
+## Files
+- `index.html` — page structure and content
+- `style.css` — responsive dark luxury styling (matte black, antique gold, ivory)
+- `script.js` — mobile navigation and enquiry-form preview behavior
+- `assets/rayudu-clickz-logo.png` — transparent studio logo
 
-## Important
-This is the public-facing static website starter. GitHub Pages does not provide secure admin login, database storage, customer enquiry management, or direct large photo/video uploads. Those require a separate backend and media-storage service. Never place passwords or secret API keys in this public repository.
+## Preview locally
+Open `index.html` in a browser. An internet connection is needed for Google Fonts and the sample Unsplash photographs.
+
+## Publish with GitHub Pages
+Upload the contents of this folder to the root of your GitHub Pages repository, preserving the `assets` folder. The logo path in the HTML is `assets/rayudu-clickz-logo.png`.
+
+## Before launch
+- Replace the sample Unsplash images with the studio's own licensed wedding photographs.
+- Connect the enquiry form to a real form service or studio WhatsApp workflow. The current form is only a front-end preview and does not send or store enquiries.
+- Add real portfolio images, service details, reviews, and contact information.
+
+This is a static website starter; it does not include an admin dashboard, database, or media-upload backend.
