@@ -11,9 +11,14 @@ header{
  justify-content:space-between;position:sticky;top:0;
  background:#080808;z-index:50;border-bottom:1px solid #ffffff20;
 }
-.logo{
- width:220px;height:68px;object-fit:contain;
- background:#fff;padding:5px 10px;border-radius:2px;display:block;
+.logo {
+  width: 220px;
+  height: 68px;
+  object-fit: contain;
+  background: #f5f2ec;
+  padding: 5px 10px;
+  display: block;
+}
 }
 nav{display:flex;gap:32px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff}
 nav a{transition:color .3s}
