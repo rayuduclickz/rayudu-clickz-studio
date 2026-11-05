@@ -1,54 +1,395 @@
 
-// FOOTER YEAR
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
 
-const yearElement = document.getElementById("year");
+    <meta name="description" content="Rayudu Clickz Studio - Wedding Photography, Cinematography, Couple Portraits and Commercial Photography in Rajahmundry.">
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
+    <title>Rayudu Clickz Studio | Photography & Cinematography</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+
+    <a href="#home" class="brand">
+        <img src="assets/rayudu-clickz-logo.png"
+             alt="Rayudu Clickz Studio Logo"
+             class="logo">
+    </a>
+
+    <button class="menu"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#films">Films</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+
+        <small>RAYUDU CLICKZ STUDIO · RAJAHMUNDRY</small>
+
+        <h1>
+            Every love story<br>
+            <em>deserves to be remembered.</em>
+        </h1>
+
+        <p>
+            Honest moments. Timeless frames.
+            Wedding stories told with heart.
+        </p>
+
+        <a href="#portfolio" class="gold">
+            EXPLORE OUR WORK
+        </a>
+
+    </div>
+
+    <span class="scroll">
+        WEDDING PHOTOGRAPHY & CINEMATOGRAPHY · SCROLL TO DISCOVER ↓
+    </span>
+
+</section>
 
 
-// MOBILE NAVIGATION
+<!-- OUR STORY -->
+<section class="section split" id="story">
 
-const menuButton = document.querySelector(".menu");
-const navigation = document.querySelector("header nav");
+    <div>
+        <small>01 / THE ART OF REMEMBERING</small>
 
-if (menuButton && navigation) {
+        <h2>
+            Not just photographs.<br>
+            <em>Pieces of your forever.</em>
+        </h2>
+    </div>
 
-    menuButton.addEventListener("click", () => {
+    <p>
+        At Rayudu Clickz Studio, we believe the most beautiful
+        memories live in the little things — a quiet glance,
+        a joyful tear, a celebration that feels like home.
 
-        const isOpen = navigation.classList.toggle("active");
+        We capture your special moments with care and creativity,
+        creating photographs and films you will return to
+        for a lifetime.
+    </p>
 
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-
-    });
-
-    navigation.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            navigation.classList.remove("active");
-            menuButton.setAttribute("aria-expanded", "false");
-
-        });
-
-    });
-
-}
+</section>
 
 
-// CONTACT FORM PREVIEW
+<!-- PORTFOLIO -->
+<section class="section dark" id="portfolio">
 
-const enquiryForm = document.getElementById("enquiry");
+    <small>02 / SELECTED STORIES</small>
 
-if (enquiryForm) {
+    <div class="heading">
+        <h2>Frames that <em>feel.</em></h2>
+        <p>A glimpse into the moments we love to preserve.</p>
+    </div>
 
-    enquiryForm.addEventListener("submit", function(event) {
+    <div class="gallery">
 
-        event.preventDefault();
+        <article>
+            <div class="photo p1"></div>
+            <h3>The Wedding Day</h3>
+            <small>Celebrations · Emotion · Tradition</small>
+        </article>
 
-        alert("Thank you for your enquiry! Please contact our studio directly to confirm your booking.");
+        <article>
+            <div class="photo p2"></div>
+            <h3>Couple Portraits</h3>
+            <small>Intimate · Effortless · You</small>
+        </article>
 
-    });
+        <article>
+            <div class="photo p3"></div>
+            <h3>Little Moments</h3>
+            <small>The details that matter</small>
+        </article>
 
-}
+    </div>
+
+</section>
+
+
+<!-- WEDDING FILMS -->
+<section class="film" id="films">
+
+    <div>
+        <small>03 / MOTION & MEMORY</small>
+
+        <h2>
+            Your day, told<br>
+            <em>like a beautiful film.</em>
+        </h2>
+
+        <p>
+            From the first look to the last dance,
+            relive the feeling through cinematic wedding films.
+        </p>
+
+        <a href="#contact" class="outline">
+            ENQUIRE ABOUT WEDDING FILMS
+        </a>
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="section studio-services" id="services">
+
+    <small>04 / WHAT WE CREATE</small>
+
+    <div class="heading">
+        <h2>Our <em>Services.</em></h2>
+        <p>Thoughtfully captured. Beautifully remembered.</p>
+    </div>
+
+    <div class="services">
+
+        <!-- 01 -->
+        <article class="service-card">
+            <b>01</b>
+            <h3>Wedding Photography</h3>
+            <p>
+                Beautifully captured wedding moments,
+                traditions and celebrations.
+            </p>
+        </article>
+
+        <!-- 02 -->
+        <article class="service-card">
+            <b>02</b>
+            <h3>Pre-Wedding Shoots</h3>
+            <p>
+                Creative and romantic photoshoots
+                that tell your love story.
+            </p>
+        </article>
+
+        <!-- 03 -->
+        <article class="service-card video-service">
+            <b>03</b>
+            <h3>Couple Portraits</h3>
+            <p>
+                Timeless portraits capturing your bond
+                and beautiful moments.
+            </p>
+
+            <div class="service-video">
+                <video controls playsinline preload="metadata">
+                    <source src="assets/couple-portraits.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+
+            <small class="video-caption">
+                PARUCHURI · COUPLE PORTRAIT FILM
+            </small>
+        </article>
+
+        <!-- 04 -->
+        <article class="service-card">
+            <b>04</b>
+            <h3>Portraits & Celebrations</h3>
+
+            <ul class="service-list">
+                <li>Maternity Photography</li>
+                <li>Newborn Photography</li>
+                <li>Kids Photography</li>
+                <li>Half Saree Photography</li>
+            </ul>
+        </article>
+
+        <!-- 05 -->
+        <article class="service-card">
+            <b>05</b>
+            <h3>Commercial Photography</h3>
+
+            <ul class="service-list">
+                <li>Food Photography</li>
+                <li>Product Photography</li>
+            </ul>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- HOUSE WARMING -->
+<section class="event-film">
+
+    <div class="event-content">
+
+        <small>EVENT STORIES</small>
+
+        <h2>
+            Every beginning<br>
+            <em>deserves to be remembered.</em>
+        </h2>
+
+        <p>
+            From house warming ceremonies to life's
+            special celebrations, we capture every emotion.
+        </p>
+
+        <a href="https://www.instagram.com/reel/Da13U7mIU7j/"
+           target="_blank"
+           rel="noopener"
+           class="outline">
+            WATCH HOUSE WARMING FILM ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+<section class="quote">
+
+    <blockquote>
+        “The best photographs don't just show how it looked.<br>
+        <em>They bring back how it felt.</em>”
+    </blockquote>
+
+    <small>RAYUDU CLICKZ STUDIO</small>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+
+    <div>
+        <small>05 / YOUR STORY STARTS HERE</small>
+
+        <h2>
+            Let's make<br>
+            <em>something timeless.</em>
+        </h2>
+
+        <p>
+            Tell us your date, your plans and what matters
+            most to you. We'd love to hear your story.
+        </p>
+    </div>
+
+    <form id="enquiry">
+
+        <label>
+            Your name
+            <input type="text" name="name"
+                   placeholder="Your name" required>
+        </label>
+
+        <label>
+            Phone number
+            <input type="tel" name="phone"
+                   placeholder="Your contact number" required>
+        </label>
+
+        <label>
+            Event date
+            <input type="date" name="date">
+        </label>
+
+        <label>
+            Service
+            <select name="service">
+                <option>Wedding Photography</option>
+                <option>Pre-Wedding Shoots</option>
+                <option>Couple Portraits</option>
+                <option>Maternity Photography</option>
+                <option>Newborn Photography</option>
+                <option>Kids Photography</option>
+                <option>Half Saree Photography</option>
+                <option>Food Photography</option>
+                <option>Product Photography</option>
+                <option>House Warming</option>
+                <option>Cinematic Wedding Film</option>
+            </select>
+        </label>
+
+        <label class="wide">
+            Tell us more
+            <textarea name="message" rows="4"
+                      placeholder="Tell us about your event"></textarea>
+        </label>
+
+        <button class="gold" type="submit">
+            PREPARE ENQUIRY ↗
+        </button>
+
+        <small class="wide muted">
+            Enquiry form preview. Contact form connection
+            will be configured separately.
+        </small>
+
+    </form>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <img src="assets/rayudu-clickz-logo.png"
+         alt="Rayudu Clickz Studio"
+         class="logo">
+
+    <p>
+        WEDDING PHOTOGRAPHY · CINEMATOGRAPHY · RAJAHMUNDRY
+    </p>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <small>
+        © <span id="year"></span> RAYUDU CLICKZ STUDIO
+    </small>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
