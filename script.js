@@ -109,5 +109,15 @@ if (enquiryForm) {
             `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
             "_blank"
         );
+        /* VIDEO AUDIO INTERACTION */
+
+.scroll-video {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-video::-webkit-media-controls {
+    display: none !important;
+}
     });
 }
