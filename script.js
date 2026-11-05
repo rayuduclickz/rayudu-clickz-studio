@@ -1,1 +1,67 @@
-const menu=document.querySelector('.menu'),nav=document.querySelector('nav');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('enquiry').addEventListener('submit',e=>{e.preventDefault();alert('Enquiry form preview only. Before launch, connect your studio WhatsApp number or a secure form service.');});
+
+/* RAYUDU CLICKZ STUDIO */
+
+
+/* FOOTER YEAR */
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+
+/* MOBILE NAVIGATION */
+
+const menuButton = document.querySelector(".menu");
+const navigation = document.querySelector(".site-header nav");
+
+if (menuButton && navigation) {
+
+    menuButton.addEventListener("click", function () {
+
+        const isOpen = navigation.classList.toggle("active");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
+
+        menuButton.textContent = isOpen ? "✕" : "☰";
+
+    });
+
+    navigation.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navigation.classList.remove("active");
+
+            menuButton.setAttribute("aria-expanded", "false");
+
+            menuButton.textContent = "☰";
+
+        });
+
+    });
+
+}
+
+
+/* CONTACT FORM PREVIEW */
+
+const enquiryForm = document.getElementById("enquiry");
+
+if (enquiryForm) {
+
+    enquiryForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for your enquiry! Please contact Rayudu Clickz Studio directly to confirm your booking."
+        );
+
+    });
+
+}
