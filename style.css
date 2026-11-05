@@ -1,5 +1,16 @@
 
+/* ==========================================
+   RAYUDU CLICKZ STUDIO
+   PREMIUM PHOTOGRAPHY WEBSITE
+   BLACK + WHITE + RED THEME
+========================================== */
+
+
+/* 01. GLOBAL RESET */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -9,358 +20,548 @@ html {
 }
 
 body {
-    margin: 0;
-    background: #fff;
-    color: #171717;
     font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
+    background: #f8f7f5;
+    color: #171717;
+    overflow-x: hidden;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
-/* HEADER */
-header {
-    height: 88px;
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* 02. HEADER */
+
+.site-header {
     width: 100%;
-    padding: 0 7vw;
+    min-height: 82px;
+    padding: 10px 6%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    background: #090909;
     position: sticky;
     top: 0;
-    background: #080808;
-    z-index: 100;
-    border-bottom: 1px solid #ffffff20;
+    z-index: 1000;
 }
 
-header > a {
+.brand {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
 }
 
 .logo {
     width: 220px;
-    height: 68px;
+    height: 65px;
     object-fit: contain;
-    background: #fff;
+    background: #ffffff;
     padding: 5px 10px;
     border-radius: 2px;
-    display: block;
 }
 
-nav {
+.site-header nav {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 32px;
-    margin-left: auto;
-    white-space: nowrap;
+    gap: 30px;
 }
 
-nav a {
-    color: #fff;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.site-header nav a {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    white-space: nowrap;
     transition: color .3s ease;
 }
 
-nav a:hover {
-    color: #ed3157;
+.site-header nav a:hover {
+    color: #d71945;
 }
 
 .menu {
     display: none;
-    background: none;
-    color: #fff;
-    border: 0;
-    font-size: 25px;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    font-size: 27px;
     cursor: pointer;
 }
 
-/* HERO */
+
+/* 03. HERO SECTION */
+
 .hero {
-    min-height: 690px;
-    height: calc(100vh - 88px);
-    max-height: 900px;
+    min-height: 680px;
+    height: 88vh;
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 8vw;
-    position: relative;
+    padding: 70px 9%;
+    color: #ffffff;
+
     background:
         linear-gradient(
             90deg,
-            rgba(5,5,5,.92),
-            rgba(5,5,5,.62) 55%,
-            rgba(5,5,5,.18)
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.30)
         ),
-        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=85')
-        center/cover;
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.35),
+            transparent 60%
+        );
+
+    pointer-events: none;
 }
 
 .hero-inner {
-    max-width: 850px;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
 }
 
-.hero small,
-section > small,
-.film small {
-    letter-spacing: 3px;
-    color: #ed3157;
-    font-size: 10px;
-    font-weight: 500;
+.hero-inner small {
+    font-size: 11px;
+    letter-spacing: 2px;
 }
 
 .hero h1 {
-    font: 400 clamp(52px, 7vw, 96px)/.98 'Cormorant Garamond', serif;
-    color: #fff;
-    margin: 28px 0;
-    max-width: 850px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: .98;
+    font-weight: 400;
+    margin: 30px 0;
 }
 
-.hero em,
-h2 em,
-blockquote em {
-    color: #ed3157;
+.hero h1 em {
+    color: #e5a0ad;
 }
 
 .hero p {
-    color: #e5e5e5;
+    color: #dddddd;
     font-size: 14px;
-    line-height: 1.9;
-    margin-bottom: 35px;
+    line-height: 1.8;
+    margin-bottom: 30px;
 }
 
-.gold,
-.outline {
+.gold {
     display: inline-block;
-    padding: 16px 27px;
-    background: #d71945;
-    color: #fff;
-    font-size: 10px;
-    letter-spacing: 2px;
-    font-weight: 500;
     border: 1px solid #d71945;
-    transition: .3s;
+    background: #d71945;
+    color: #ffffff;
+    padding: 15px 25px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all .3s ease;
 }
 
 .gold:hover {
-    background: #a90e32;
-    border-color: #a90e32;
-    transform: translateY(-2px);
+    background: transparent;
+    color: #ffffff;
 }
 
 .scroll {
     position: absolute;
-    bottom: 25px;
-    left: 8vw;
+    bottom: 30px;
+    left: 9%;
+    color: #dddddd;
     font-size: 9px;
-    letter-spacing: 2px;
-    color: #ddd;
+    letter-spacing: 1.5px;
 }
 
-/* GENERAL SECTIONS */
+
+/* 04. COMMON SECTIONS */
+
 .section {
-    padding: 110px 9vw;
-    background: #fff;
-    color: #171717;
+    padding: 110px 9%;
 }
+
+.section > small,
+.film small {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.section h2,
+.film h2,
+.contact h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    font-weight: 400;
+}
+
+.section h2 em,
+.film h2 em,
+.contact h2 em {
+    color: #d71945;
+}
+
+
+/* 05. OUR STORY */
 
 .split {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 9vw;
+    gap: 70px;
     align-items: center;
+    background: #f8f7f5;
 }
 
-.split p,
-.contact p {
-    color: #555;
+.split p {
+    color: #666666;
     font-size: 14px;
     line-height: 2;
 }
 
-.section h2,
-.film h2 {
-    font: 400 clamp(43px, 5vw, 68px)/1.05 'Cormorant Garamond', serif;
-    margin: 25px 0;
-    color: #111;
-}
 
-.dark {
-    background: #101010;
-    color: #fff;
-}
-
-.dark h2 {
-    color: #fff;
-}
+/* 06. SECTION HEADINGS */
 
 .heading {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    margin-bottom: 40px;
+    margin: 25px 0 45px;
 }
 
 .heading p {
-    color: #aaa;
-    font-size: 12px;
+    color: #888888;
+    font-size: 13px;
+    margin-top: 14px;
+    line-height: 1.8;
 }
 
-/* PORTFOLIO */
+
+/* 07. PORTFOLIO */
+
+.dark {
+    background: #101010;
+    color: #ffffff;
+}
+
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.gallery article:nth-child(2) {
-    margin-top: 55px;
-}
-
-.gallery article:nth-child(3) {
-    margin-top: 100px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
 }
 
 .gallery article {
+    min-width: 0;
     overflow: hidden;
 }
 
 .photo {
-    height: 390px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
     background-size: cover;
     background-position: center;
-    filter: saturate(.85);
-    transition: transform .5s, filter .5s;
+    transition: transform .5s ease;
 }
 
 .gallery article:hover .photo {
-    transform: scale(1.035);
-    filter: saturate(1);
+    transform: scale(1.025);
 }
 
 .p1 {
-    background-image: url('https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=85');
+    background-image:
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85");
 }
 
 .p2 {
-    background-image: url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=900&q=85');
+    background-image:
+        url("https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=900&q=85");
 }
 
 .p3 {
-    background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85');
+    background-image:
+        url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85");
 }
 
-.gallery h3,
-.services h3 {
-    font: 400 26px 'Cormorant Garamond', serif;
-    margin: 16px 0 4px;
+.gallery h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin: 20px 0 7px;
 }
 
-.gallery article small,
-.note {
+.gallery small {
+    color: #aaaaaa;
     font-size: 10px;
-    color: #aaa;
+    letter-spacing: .5px;
 }
 
-.note {
-    margin-top: 35px;
-}
 
-/* WEDDING FILMS */
+/* 08. WEDDING FILMS */
+
 .film {
-    min-height: 570px;
-    padding: 100px 10vw;
+    min-height: 520px;
     display: flex;
     align-items: center;
+    padding: 90px 9%;
+    color: #ffffff;
+
     background:
-        linear-gradient(90deg, #080808ed, #08080870),
-        url('https://images.unsplash.com/photo-1507504031003-b417219a0eaa?auto=format&fit=crop&w=1800&q=85')
-        center/cover;
-    color: #fff;
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.35)
+        ),
+        url("https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
 }
 
 .film > div {
-    max-width: 560px;
+    max-width: 620px;
 }
 
 .film h2 {
-    font-size: clamp(48px, 6vw, 76px);
-    color: #fff;
+    margin: 25px 0;
+}
+
+.film h2 em {
+    color: #e5a0ad;
 }
 
 .film p {
-    color: #ddd;
-    line-height: 1.9;
+    max-width: 450px;
+    color: #dddddd;
     font-size: 13px;
-    max-width: 400px;
+    line-height: 1.9;
     margin-bottom: 30px;
 }
 
 .outline {
-    background: transparent;
-    color: #fff;
-    border-color: #d71945;
+    display: inline-block;
+    padding: 14px 22px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    transition: all .3s ease;
 }
 
 .outline:hover {
     background: #d71945;
+    border-color: #d71945;
 }
 
-/* SERVICES */
+
+/* 09. SERVICES SECTION */
+
+.studio-services {
+    background: #f8f7f5;
+    color: #171717;
+}
+
+.studio-services .heading h2 {
+    color: #171717;
+}
+
 .services {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    margin-top: 55px;
-    border-top: 1px solid #ddd;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px 35px;
+    margin-top: 50px;
+    border-top: 1px solid #dedbd7;
 }
 
-.services article {
-    padding-top: 25px;
+.service-card {
+    padding: 28px 0;
+    min-width: 0;
 }
 
-.services b {
+.service-card > b {
     color: #d71945;
-    font-size: 11px;
-}
-
-.services p {
     font-size: 12px;
-    line-height: 1.9;
-    color: #666;
+    letter-spacing: 2px;
 }
 
-/* QUOTE */
+.service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    font-weight: 500;
+    color: #171717;
+    margin: 16px 0 12px;
+    transition: color .3s ease;
+}
+
+.service-card:hover h3 {
+    color: #d71945;
+}
+
+.service-card p {
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* 10. SERVICE BULLET LISTS */
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+.service-list li {
+    color: #666666;
+    font-size: 13px;
+    line-height: 2.7;
+    border-bottom: 1px solid #dedbd780;
+}
+
+.service-list li::before {
+    content: "•";
+    color: #d71945;
+    margin-right: 12px;
+    font-size: 17px;
+}
+
+
+/* 11. COUPLE PORTRAITS VIDEO */
+
+.service-video {
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    background: #080808;
+    border-radius: 4px;
+}
+
+.service-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: contain;
+    max-height: 500px;
+    background: #080808;
+}
+
+.video-caption {
+    display: block;
+    margin-top: 12px;
+    color: #999999;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+
+/* 12. HOUSE WARMING SECTION */
+
+.event-film {
+    min-height: 430px;
+    padding: 100px 9%;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.40)
+        ),
+        url("https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+.event-content {
+    max-width: 650px;
+}
+
+.event-content small {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.event-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 20px 0;
+}
+
+.event-content h2 em {
+    color: #e5a0ad;
+}
+
+.event-content p {
+    color: #dddddd;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 480px;
+    margin-bottom: 25px;
+}
+
+
+/* 13. QUOTE SECTION */
+
 .quote {
+    padding: 100px 9%;
     text-align: center;
-    padding: 100px 20px;
-    background: #f5f3f1;
-    color: #111;
+    background: #111111;
+    color: #ffffff;
 }
 
 .quote blockquote {
-    font: 400 clamp(28px, 4vw, 48px)/1.2 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.quote blockquote em {
+    color: #e5a0ad;
 }
 
 .quote small {
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: #d71945;
+    display: block;
+    color: #aaaaaa;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 30px;
 }
 
-/* CONTACT */
+
+/* 14. CONTACT SECTION */
+
 .contact {
     display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 8vw;
-    background: #fff;
-    color: #171717;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 70px;
+    background: #f8f7f5;
+}
+
+.contact > div > p {
+    margin-top: 25px;
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 420px;
 }
 
 .contact form {
@@ -370,25 +571,24 @@ blockquote em {
 }
 
 .contact label {
-    font-size: 10px;
-    letter-spacing: 1px;
-    color: #b51238;
-    text-transform: uppercase;
-    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 11px;
+    color: #555555;
 }
 
 .contact input,
 .contact select,
 .contact textarea {
-    display: block;
     width: 100%;
-    margin-top: 10px;
-    padding: 13px 2px;
+    padding: 14px;
     background: transparent;
-    color: #222;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    font: 13px 'DM Sans', sans-serif;
+    border: 1px solid #d7d3d0;
+    border-radius: 0;
+    color: #171717;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
     outline: none;
 }
 
@@ -398,177 +598,208 @@ blockquote em {
     border-color: #d71945;
 }
 
-.contact select option {
-    background: #fff;
-    color: #111;
+.contact textarea {
+    resize: vertical;
 }
 
 .wide {
     grid-column: 1 / -1;
 }
 
-.contact button {
+.contact .gold {
     justify-self: start;
-    cursor: pointer;
 }
 
 .muted {
-    color: #888;
+    color: #999999;
     font-size: 10px;
+    line-height: 1.6;
 }
 
-/* FOOTER */
+
+/* 15. FOOTER */
+
 footer {
+    padding: 55px 8%;
+    background: #090909;
+    color: #ffffff;
     text-align: center;
-    padding: 45px 20px;
-    background: #080808;
-    border-top: 1px solid #ffffff20;
-    color: #fff;
 }
 
 footer .logo {
-    margin: 0 auto;
+    margin: 0 auto 20px;
 }
 
-footer p,
-footer small {
-    display: block;
-    color: #aaa;
-    font-size: 9px;
-    letter-spacing: 2px;
-    margin-top: 18px;
+footer p {
+    color: #aaaaaa;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin: 18px 0;
 }
 
-/* TABLET AND MOBILE */
-@media (max-width: 1000px) {
-    header {
-        padding: 0 5vw;
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 22px 0;
+}
+
+.footer-links a {
+    color: #dddddd;
+    font-size: 11px;
+    transition: color .3s ease;
+}
+
+.footer-links a:hover {
+    color: #d71945;
+}
+
+footer > small {
+    color: #888888;
+    font-size: 10px;
+}
+
+
+/* 16. TABLET RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        padding: 10px 4%;
     }
 
-    nav {
-        gap: 20px;
+    .site-header nav {
+        gap: 16px;
     }
 
-    nav a {
-        font-size: 10px;
-        letter-spacing: 1.5px;
+    .site-header nav a {
+        font-size: 11px;
     }
 
     .logo {
-        width: 190px;
-    }
-}
-
-@media (max-width: 800px) {
-    header {
-        padding: 0 5vw;
-        height: 80px;
-    }
-
-    .logo {
-        width: 175px;
+        width: 180px;
         height: 60px;
+    }
+
+    .services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact {
+        gap: 35px;
+    }
+
+}
+
+
+/* 17. MOBILE RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        min-height: 70px;
+        padding: 8px 5%;
+    }
+
+    .logo {
+        width: 165px;
+        height: 53px;
     }
 
     .menu {
         display: block;
     }
 
-    header nav {
+    .site-header nav {
         display: none;
         position: absolute;
-        top: 80px;
+        top: 70px;
         left: 0;
-        right: 0;
-        margin: 0;
-        padding: 25px;
-        background: #080808;
+        width: 100%;
+        background: #090909;
+        padding: 22px 7%;
         flex-direction: column;
         align-items: flex-start;
-        gap: 24px;
+        gap: 22px;
+        border-top: 1px solid #333333;
     }
 
-    header nav.open {
+    .site-header nav.active {
         display: flex;
     }
 
+    .site-header nav a {
+        font-size: 13px;
+    }
+
     .hero {
-        padding: 10vw 7vw;
-        background-position: 60%;
-    }
-
-    .split,
-    .contact {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .section {
-        padding: 80px 7vw;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .gallery article:nth-child(n) {
-        margin-top: 0;
-    }
-
-    .gallery article:first-child {
-        grid-column: 1 / -1;
-    }
-
-    .gallery article:first-child .photo {
-        height: 420px;
-    }
-
-    .photo {
-        height: 320px;
-    }
-
-    .services {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .heading {
-        display: block;
-    }
-
-    .film {
-        padding: 80px 7vw;
-    }
-}
-
-/* SMALL MOBILE */
-@media (max-width: 520px) {
-    .hero {
-        min-height: 650px;
+        min-height: 600px;
+        height: 82vh;
+        padding: 60px 7%;
     }
 
     .hero h1 {
-        font-size: 53px;
+        font-size: clamp(43px, 12vw, 65px);
     }
 
     .scroll {
-        font-size: 7px;
+        left: 7%;
+        font-size: 8px;
+    }
+
+    .section {
+        padding: 75px 7%;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     .gallery {
         grid-template-columns: 1fr;
+        gap: 35px;
     }
 
-    .gallery article:first-child {
-        grid-column: auto;
+    .gallery .photo {
+        aspect-ratio: 4 / 5;
     }
 
-    .photo,
-    .gallery article:first-child .photo {
-        height: 380px;
+    .film {
+        min-height: 450px;
+        padding: 75px 7%;
     }
 
     .services {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .service-card {
+        padding: 22px 0;
+    }
+
+    .service-card h3 {
+        font-size: 27px;
+    }
+
+    .service-video video {
+        max-height: 520px;
+    }
+
+    .event-film {
+        min-height: 360px;
+        padding: 70px 7%;
+    }
+
+    .quote {
+        padding: 75px 7%;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 35px;
     }
 
     .contact form {
@@ -579,7 +810,32 @@ footer small {
         grid-column: auto;
     }
 
-    .section h2 {
-        font-size: 46px;
+    .footer-links {
+        gap: 18px;
     }
+
+}
+
+
+/* 18. SMALL MOBILE */
+
+@media (max-width: 380px) {
+
+    .logo {
+        width: 145px;
+        height: 48px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-inner small {
+        font-size: 9px;
+    }
+
+    .service-card h3 {
+        font-size: 25px;
+    }
+
 }
