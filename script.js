@@ -1,67 +1,70 @@
 
-/* RAYUDU CLICKZ STUDIO */
+document.addEventListener("DOMContentLoaded", function () {
 
+    // AUTOMATIC COPYRIGHT YEAR
+    const yearElement = document.getElementById("year");
 
-/* FOOTER YEAR */
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 
-const yearElement = document.getElementById("year");
+    // MOBILE MENU
+    const menuButton = document.querySelector(".menu");
+    const navigation = document.querySelector(".site-header nav");
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
+    if (menuButton && navigation) {
 
+        menuButton.addEventListener("click", function () {
 
-/* MOBILE NAVIGATION */
+            const isOpen = navigation.classList.toggle("active");
 
-const menuButton = document.querySelector(".menu");
-const navigation = document.querySelector(".site-header nav");
-
-if (menuButton && navigation) {
-
-    menuButton.addEventListener("click", function () {
-
-        const isOpen = navigation.classList.toggle("active");
-
-        menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
-
-        menuButton.textContent = isOpen ? "✕" : "☰";
-
-    });
-
-    navigation.querySelectorAll("a").forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            navigation.classList.remove("active");
-
-            menuButton.setAttribute("aria-expanded", "false");
-
-            menuButton.textContent = "☰";
-
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.textContent = isOpen ? "✕" : "☰";
         });
 
-    });
+        navigation.querySelectorAll("a").forEach(function (link) {
 
-}
+            link.addEventListener("click", function () {
 
+                navigation.classList.remove("active");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.textContent = "☰";
+            });
 
-/* CONTACT FORM PREVIEW */
+        });
+    }
 
-const enquiryForm = document.getElementById("enquiry");
+    // ENQUIRY FORM
+    const enquiryForm = document.getElementById("enquiry");
 
-if (enquiryForm) {
+    if (enquiryForm) {
 
-    enquiryForm.addEventListener("submit", function (event) {
+        enquiryForm.addEventListener("submit", function (event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        alert(
-            "Thank you for your enquiry! Please contact Rayudu Clickz Studio directly to confirm your booking."
-        );
+            const formData = new FormData(enquiryForm);
 
-    });
+            const name = formData.get("name");
+            const phone = formData.get("phone");
+            const eventType = formData.get("event");
+            const message = formData.get("message");
 
-}
+            const whatsappMessage =
+                "Hello Rayudu Clickz Studio!" +
+                "\nName: " + name +
+                "\nPhone: " + phone +
+                "\nEvent: " + eventType +
+                "\nMessage: " + message;
+
+            const whatsappURL =
+                "https://wa.me/919247129095?text=" +
+                encodeURIComponent(whatsappMessage);
+
+            window.open(whatsappURL, "_blank");
+
+            enquiryForm.reset();
+        });
+    }
+
+});
