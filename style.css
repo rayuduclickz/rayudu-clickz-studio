@@ -15,7 +15,7 @@
 :root {
     --black: #101010;
     --deep-black: #080808;
-    --ivory: #f7f4f0;
+    --ivory: #F7F4F0;
     --white: #ffffff;
     --red: #c52b35;
     --grey: #a6a19d;
@@ -43,6 +43,7 @@ body {
 img,
 video {
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -154,7 +155,7 @@ a {
 
 
 /* =========================================
-   HERO - LOGO BACKGROUND
+   HERO - IVORY LOGO PANEL
 ========================================= */
 
 .hero {
@@ -167,16 +168,13 @@ a {
     isolation: isolate;
     overflow: hidden;
 
-    background:
-        linear-gradient(
-            90deg,
-            #080808 0%,
-            #101010 55%,
-            #181818 100%
-        );
+    background: linear-gradient(
+        90deg,
+        #080808 0%,
+        #101010 55%,
+        #181818 100%
+    );
 }
-
-/* RAYUDU CLICKZ LOGO ON RIGHT SIDE */
 
 .hero::after {
     content: "";
@@ -188,14 +186,19 @@ a {
     width: 48%;
     height: 75%;
 
+    background-color: var(--ivory);
     background-image: url("assets/rayudu-clickz-logo.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 
+    padding: 25px;
+    border-radius: 4px;
+
     opacity: 1;
     z-index: 0;
     pointer-events: none;
+    box-sizing: border-box;
 }
 
 .hero-content {
@@ -496,7 +499,6 @@ a {
 
 /* =========================================
    WEDDING STORIES
-   HTML section can retain class="housewarming"
 ========================================= */
 
 .housewarming {
@@ -885,10 +887,11 @@ a {
 
     .hero::after {
         width: 90%;
-        height: 40%;
+        height: 38%;
         right: 5%;
         top: 78%;
-        opacity: 0.85;
+        padding: 15px;
+        opacity: 1;
     }
 
     .section-padding {
