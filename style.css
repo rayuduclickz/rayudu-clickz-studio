@@ -2,20 +2,15 @@
 /* =========================================
    RAYUDU CLICKZ STUDIO
    COMPLETE RESPONSIVE WEBSITE CSS
-   BLACK / IVORY / RED THEME
+   Theme: Black / Ivory / Red
 ========================================= */
 
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
     --black: #101010;
     --deep-black: #080808;
-    --ivory: #F7F4F0;
+    --ivory: #f7f4f0;
     --white: #ffffff;
     --red: #c52b35;
     --grey: #a6a19d;
@@ -25,6 +20,14 @@
     --body-font: 'DM Sans', sans-serif;
 }
 
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
@@ -32,10 +35,9 @@ html {
 
 body {
     width: 100%;
-    max-width: 100%;
     overflow-x: hidden;
-    background: var(--black);
-    color: var(--white);
+    background: var(--ivory);
+    color: var(--black);
     font-family: var(--body-font);
     line-height: 1.7;
 }
@@ -43,7 +45,7 @@ body {
 img,
 video {
     max-width: 100%;
-    height: auto;
+    display: block;
 }
 
 a {
@@ -57,35 +59,29 @@ textarea {
     font: inherit;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
 .section-padding {
     padding: 110px 7%;
 }
 
 .eyebrow {
+    color: var(--red);
     font-size: 10px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--red);
-    font-weight: 600;
 }
 
 .section-heading {
-    width: 100%;
     max-width: 850px;
-    text-align: center;
     margin: 0 auto 55px;
+    text-align: center;
 }
 
 .section-heading h2 {
     font-family: var(--heading-font);
-    font-size: clamp(38px, 5vw, 58px);
-    line-height: 1.08;
+    font-size: clamp(38px, 5vw, 60px);
     font-weight: 500;
+    line-height: 1.08;
     margin: 15px 0;
 }
 
@@ -96,20 +92,21 @@ a {
 
 
 /* =========================================
-   HEADER - WHITE BACKGROUND
+   HEADER - IVORY BACKGROUND
 ========================================= */
 
 .site-header {
     width: 100%;
     min-height: 90px;
-    padding: 15px 7%;
+    padding: 12px 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    background: #ffffff;
+    background: var(--ivory);
     position: relative;
     z-index: 1000;
+    border-bottom: 1px solid #e8e2dc;
 }
 
 .brand {
@@ -119,12 +116,9 @@ a {
 }
 
 .brand img {
-    display: block;
-    width: 190px;
-    max-height: 90px;
-    height: auto;
+    width: 155px;
+    max-height: 68px;
     object-fit: contain;
-    background: #ffffff;
 }
 
 .site-header nav {
@@ -135,8 +129,9 @@ a {
 }
 
 .site-header nav a {
+    color: var(--black);
     font-size: 11px;
-    color: #101010;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -146,98 +141,73 @@ a {
 
 .menu {
     display: none;
-    color: #101010;
+    color: var(--black);
     background: transparent;
-    border: 0;
-    font-size: 26px;
+    border: none;
+    font-size: 27px;
     cursor: pointer;
 }
 
 
 /* =========================================
-   HERO - IVORY LOGO PANEL
+   HERO SECTION
 ========================================= */
 
 .hero {
-    min-height: 650px;
     width: 100%;
-    display: flex;
+    min-height: 680px;
+    padding: 80px 9%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
-    padding: 100px 9%;
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    background: linear-gradient(
-        90deg,
-        #080808 0%,
-        #101010 55%,
-        #181818 100%
-    );
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-
-    width: 48%;
-    height: 75%;
-
-    background-color: var(--ivory);
-    background-image: url("assets/rayudu-clickz-logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
-    padding: 25px;
-    border-radius: 4px;
-
-    opacity: 1;
-    z-index: 0;
-    pointer-events: none;
-    box-sizing: border-box;
+    gap: 55px;
+    background:
+        linear-gradient(
+            110deg,
+            #080808 0%,
+            #111111 55%,
+            #191919 100%
+        );
+    color: var(--white);
 }
 
 .hero-content {
     max-width: 650px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content .eyebrow {
     color: var(--white);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .hero-content h1 {
     font-family: var(--heading-font);
-    font-size: clamp(55px, 7vw, 88px);
-    line-height: 0.95;
-    font-weight: 500;
-    margin-bottom: 25px;
+    font-size: clamp(55px, 7vw, 92px);
+    font-weight: 400;
+    line-height: 0.98;
+    margin-bottom: 30px;
 }
 
 .hero-content > p:not(.eyebrow) {
     color: #dedbd7;
-    font-size: 13px;
-    max-width: 470px;
-    margin-bottom: 28px;
+    font-size: 14px;
+    max-width: 500px;
+    margin-bottom: 32px;
 }
 
 .primary-btn {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    padding: 13px 23px;
+    justify-content: center;
+    padding: 15px 28px;
     background: var(--red);
     color: var(--white);
     border: 1px solid var(--red);
     font-size: 10px;
+    font-weight: 700;
     letter-spacing: 1px;
-    font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -245,6 +215,27 @@ a {
 .primary-btn:hover {
     background: transparent;
     color: var(--white);
+}
+
+/* HERO LOGO PANEL */
+
+.hero-logo {
+    width: 100%;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    background: var(--ivory);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.hero-logo img {
+    width: 100%;
+    max-width: 650px;
+    max-height: 350px;
+    object-fit: contain;
 }
 
 
@@ -267,7 +258,7 @@ a {
 }
 
 .story .section-heading h2 {
-    font-size: clamp(42px, 5vw, 64px);
+    font-size: clamp(42px, 5vw, 65px);
 }
 
 .story-content {
@@ -291,14 +282,13 @@ a {
 }
 
 .portfolio-grid {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
-    width: 100%;
 }
 
 .portfolio-item {
-    min-width: 0;
     min-height: 420px;
     position: relative;
     overflow: hidden;
@@ -349,13 +339,13 @@ a {
     display: block;
     color: var(--red);
     font-size: 11px;
-    margin-bottom: 5px;
     letter-spacing: 2px;
+    margin-bottom: 5px;
 }
 
 .portfolio-overlay h3 {
     font-family: var(--heading-font);
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 500;
 }
 
@@ -366,28 +356,20 @@ a {
 
 .films {
     width: 100%;
+    padding: 100px 7%;
     background: var(--ivory);
     color: var(--black);
     text-align: center;
-    padding: 100px 7%;
 }
 
 .films .section-heading {
-    width: 100%;
     max-width: 850px;
     margin: 0 auto 45px;
     text-align: center;
 }
 
-.films .section-heading h2,
-.films .section-heading p {
-    text-align: center;
-}
-
 .film-content {
     width: 100%;
-    max-width: 100%;
-    display: block;
     margin: 0 auto;
 }
 
@@ -399,17 +381,14 @@ a {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    isolation: isolate;
-
     background:
         linear-gradient(
-            rgba(0, 0, 0, 0.48),
-            rgba(0, 0, 0, 0.48)
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
         ),
         url("https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1800&q=85");
-
     background-size: cover;
-    background-position: center 45%;
+    background-position: center;
 }
 
 .film-caption {
@@ -419,8 +398,6 @@ a {
     padding: 35px 20px;
     text-align: center;
     color: var(--white);
-    position: relative;
-    transform: none;
 }
 
 .film-caption p {
@@ -428,7 +405,6 @@ a {
     font-size: 11px;
     letter-spacing: 1px;
     margin-bottom: 15px;
-    text-align: center;
 }
 
 .film-caption h3 {
@@ -437,7 +413,6 @@ a {
     font-size: clamp(30px, 4vw, 46px);
     font-weight: 500;
     line-height: 1.2;
-    text-align: center;
 }
 
 
@@ -458,8 +433,8 @@ a {
 
 .service-card {
     min-width: 0;
-    background: #191919;
     padding: 35px 28px;
+    background: #191919;
     border: 1px solid #292929;
     transition: 0.3s ease;
 }
@@ -493,63 +468,39 @@ a {
     display: block;
     margin-top: 22px;
     background: #000;
-    border-radius: 2px;
 }
 
 
 /* =========================================
    WEDDING STORIES
+   Replaces House Warming section
 ========================================= */
 
-.housewarming {
+.wedding-stories {
     width: 100%;
+    padding: 100px 7%;
     background: var(--ivory);
     color: var(--black);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
 }
 
-.housewarming .section-heading {
-    width: 100%;
+.wedding-stories .section-heading {
     max-width: 850px;
-    margin: 0 auto 40px;
-    text-align: center;
+    margin: 0 auto 45px;
 }
 
-.housewarming-content {
+.wedding-stories video {
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-}
-
-.housewarming-content video,
-.housewarming video {
-    display: block;
-    width: 100%;
-    max-width: 850px;
     max-height: 520px;
-    height: auto;
     margin: 0 auto;
+    display: block;
     background: #000;
     object-fit: contain;
-    position: static;
-    transform: none;
 }
 
-.housewarming-content .primary-btn,
-.housewarming .primary-btn {
-    display: inline-flex;
-    align-self: center;
-    margin: 5px auto 0;
+.wedding-stories .primary-btn {
+    margin-top: 30px;
 }
 
 
@@ -579,9 +530,9 @@ a {
 }
 
 .quote-content > p:last-child {
+    color: var(--grey);
     font-size: 10px;
     letter-spacing: 3px;
-    color: var(--grey);
 }
 
 
@@ -610,15 +561,15 @@ a {
 }
 
 .contact-details p {
-    font-size: 13px;
     color: #625c58;
+    font-size: 13px;
     margin-bottom: 22px;
 }
 
 .contact-details a {
     color: var(--black);
-    transition: color 0.3s ease;
     overflow-wrap: anywhere;
+    transition: color 0.3s ease;
 }
 
 .contact-details a:hover {
@@ -640,7 +591,6 @@ a {
     color: var(--black);
     outline: none;
     font-size: 13px;
-    border-radius: 0;
 }
 
 #enquiry input:focus,
@@ -663,34 +613,30 @@ a {
 ========================================= */
 
 .site-footer {
-    width: 100%;
+    padding: 65px 7% 20px;
     background: var(--deep-black);
     color: var(--white);
-    padding: 65px 7% 20px;
 }
 
 .footer-content {
+    max-width: 1250px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 50px;
-    max-width: 1250px;
-    margin: 0 auto;
 }
 
 .footer-brand img {
-    display: block;
-    width: 190px;
-    max-height: 90px;
-    height: auto;
+    width: 155px;
+    max-height: 75px;
     object-fit: contain;
-    background: #ffffff;
     margin-bottom: 18px;
 }
 
 .footer-brand p {
+    max-width: 260px;
     color: var(--grey);
     font-size: 12px;
-    max-width: 260px;
 }
 
 .footer-links,
@@ -730,8 +676,8 @@ a {
 }
 
 .footer-bottom p {
-    font-size: 11px;
     color: var(--grey);
+    font-size: 11px;
 }
 
 
@@ -745,12 +691,12 @@ a {
     bottom: 25px;
     z-index: 9999;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 13px 20px;
     border-radius: 40px;
     background: #168c52;
-    color: #ffffff;
+    color: #fff;
     font-size: 12px;
     font-weight: 600;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -783,14 +729,13 @@ a {
     }
 
     .hero {
-        min-height: 580px;
-        padding-left: 7%;
-        padding-right: 7%;
+        min-height: 600px;
+        padding: 75px 6%;
+        gap: 35px;
     }
 
-    .hero::after {
-        right: 3%;
-        width: 45%;
+    .hero-logo {
+        min-height: 350px;
     }
 
     .portfolio-item {
@@ -827,16 +772,13 @@ a {
     }
 
     .brand img {
-        width: 145px;
-        max-height: 70px;
-        height: auto;
-        object-fit: contain;
+        width: 125px;
+        max-height: 50px;
     }
 
     .menu {
         display: block;
         margin-left: auto;
-        color: #101010;
     }
 
     .site-header nav {
@@ -846,11 +788,11 @@ a {
         left: 0;
         width: 100%;
         padding: 20px 5%;
-        background: #ffffff;
+        background: var(--ivory);
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-        border-top: 1px solid #eeeeee;
+        border-top: 1px solid #e8e2dc;
     }
 
     .site-header nav.active {
@@ -860,20 +802,19 @@ a {
     .site-header nav a {
         width: 100%;
         padding: 13px 0;
-        color: #101010;
-        border-bottom: 1px solid #eeeeee;
+        border-bottom: 1px solid #e8e2dc;
         font-size: 13px;
     }
 
     .hero {
-        min-height: 600px;
-        padding: 70px 7%;
-        align-items: flex-start;
+        min-height: auto;
+        padding: 75px 7%;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .hero-content {
-        max-width: 100%;
-        padding-top: 35px;
+        text-align: center;
     }
 
     .hero-content h1 {
@@ -882,16 +823,17 @@ a {
 
     .hero-content > p:not(.eyebrow) {
         font-size: 12px;
-        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .hero::after {
-        width: 90%;
-        height: 38%;
-        right: 5%;
-        top: 78%;
-        padding: 15px;
-        opacity: 1;
+    .hero-logo {
+        min-height: 240px;
+        padding: 20px;
+    }
+
+    .hero-logo img {
+        max-height: 200px;
     }
 
     .section-padding {
@@ -944,18 +886,12 @@ a {
         padding: 75px 6%;
     }
 
-    .films .section-heading {
-        margin-bottom: 30px;
-    }
-
     .film-image {
         min-height: 350px;
-        background-position: center;
     }
 
     .film-caption {
         padding: 25px 15px;
-        text-align: center;
     }
 
     .film-caption h3 {
@@ -971,20 +907,11 @@ a {
         padding: 30px 25px;
     }
 
-    .housewarming {
-        padding-left: 6%;
-        padding-right: 6%;
+    .wedding-stories {
+        padding: 75px 6%;
     }
 
-    .housewarming-content {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .housewarming-content video,
-    .housewarming video {
-        width: 100%;
-        max-width: 100%;
+    .wedding-stories video {
         max-height: 350px;
     }
 
@@ -1022,11 +949,6 @@ a {
         max-width: 300px;
     }
 
-    .footer-brand img {
-        width: 160px;
-        max-height: 75px;
-    }
-
     .whatsapp-float {
         right: 15px;
         bottom: 15px;
@@ -1042,7 +964,7 @@ a {
 @media (max-width: 380px) {
 
     .hero-content h1 {
-        font-size: 48px;
+        font-size: 46px;
     }
 
     .section-heading h2 {
