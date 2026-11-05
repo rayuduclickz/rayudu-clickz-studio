@@ -1,8 +1,8 @@
 
 /* =========================================
    RAYUDU CLICKZ STUDIO
-   COMPLETE RESPONSIVE STYLESHEET
-   Theme: Black / Ivory / Red
+   COMPLETE RESPONSIVE WEBSITE CSS
+   BLACK / IVORY / RED THEME
 ========================================= */
 
 /* RESET */
@@ -43,7 +43,6 @@ body {
 img,
 video {
     max-width: 100%;
-    height: auto;
 }
 
 a {
@@ -121,12 +120,10 @@ a {
 .brand img {
     display: block;
     width: 190px;
-    height: auto;
     max-height: 90px;
+    height: auto;
     object-fit: contain;
     background: #ffffff;
-    padding: 5px;
-    border-radius: 2px;
 }
 
 .site-header nav {
@@ -157,7 +154,7 @@ a {
 
 
 /* =========================================
-   HERO
+   HERO - LOGO BACKGROUND
 ========================================= */
 
 .hero {
@@ -168,18 +165,37 @@ a {
     padding: 100px 9%;
     position: relative;
     isolation: isolate;
+    overflow: hidden;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.93) 0%,
-            rgba(0, 0, 0, 0.68) 43%,
-            rgba(0, 0, 0, 0.12) 100%
-        ),
-        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85");
+            #080808 0%,
+            #101010 55%,
+            #181818 100%
+        );
+}
 
-    background-size: cover;
+/* RAYUDU CLICKZ LOGO ON RIGHT SIDE */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+
+    width: 48%;
+    height: 75%;
+
+    background-image: url("assets/rayudu-clickz-logo.png");
+    background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
+
+    opacity: 1;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -401,9 +417,6 @@ a {
     text-align: center;
     color: var(--white);
     position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
     transform: none;
 }
 
@@ -483,6 +496,7 @@ a {
 
 /* =========================================
    WEDDING STORIES
+   HTML section can retain class="housewarming"
 ========================================= */
 
 .housewarming {
@@ -526,8 +540,6 @@ a {
     background: #000;
     object-fit: contain;
     position: static;
-    left: auto;
-    right: auto;
     transform: none;
 }
 
@@ -666,12 +678,10 @@ a {
 .footer-brand img {
     display: block;
     width: 190px;
-    height: auto;
     max-height: 90px;
+    height: auto;
     object-fit: contain;
     background: #ffffff;
-    padding: 5px;
-    border-radius: 2px;
     margin-bottom: 18px;
 }
 
@@ -738,7 +748,7 @@ a {
     padding: 13px 20px;
     border-radius: 40px;
     background: #168c52;
-    color: #fff;
+    color: #ffffff;
     font-size: 12px;
     font-weight: 600;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -776,6 +786,11 @@ a {
         padding-right: 7%;
     }
 
+    .hero::after {
+        right: 3%;
+        width: 45%;
+    }
+
     .portfolio-item {
         min-height: 340px;
     }
@@ -811,8 +826,8 @@ a {
 
     .brand img {
         width: 145px;
-        height: auto;
         max-height: 70px;
+        height: auto;
         object-fit: contain;
     }
 
@@ -849,9 +864,14 @@ a {
     }
 
     .hero {
-        min-height: 570px;
-        padding: 80px 7%;
-        background-position: 58% center;
+        min-height: 600px;
+        padding: 70px 7%;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-top: 35px;
     }
 
     .hero-content h1 {
@@ -861,6 +881,14 @@ a {
     .hero-content > p:not(.eyebrow) {
         font-size: 12px;
         max-width: 330px;
+    }
+
+    .hero::after {
+        width: 90%;
+        height: 40%;
+        right: 5%;
+        top: 78%;
+        opacity: 0.85;
     }
 
     .section-padding {
@@ -1037,37 +1065,6 @@ a {
     .footer-brand {
         grid-column: auto;
     }
-}
-
-
-/* =========================================
-   FINAL LAYOUT STABILITY
-========================================= */
-
-.site-header,
-main,
-section,
-.site-footer {
-    width: 100%;
-    max-width: 100%;
-}
-
-.housewarming,
-.housewarming-content,
-.film-content,
-.film-image {
-    box-sizing: border-box;
-}
-
-.housewarming video {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.portfolio-grid,
-.services-grid,
-.contact-content {
-    min-width: 0;
 }
 
 
