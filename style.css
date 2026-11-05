@@ -32,6 +32,7 @@ html {
 
 body {
     width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     background: var(--black);
     color: var(--white);
@@ -42,6 +43,7 @@ body {
 img,
 video {
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -73,6 +75,7 @@ a {
 }
 
 .section-heading {
+    width: 100%;
     text-align: center;
     max-width: 850px;
     margin: 0 auto 55px;
@@ -271,6 +274,7 @@ a {
 }
 
 .portfolio-item {
+    min-width: 0;
     min-height: 420px;
     position: relative;
     overflow: hidden;
@@ -351,16 +355,14 @@ a {
     text-align: center;
 }
 
-.films .section-heading h2 {
-    text-align: center;
-}
-
+.films .section-heading h2,
 .films .section-heading p {
     text-align: center;
 }
 
 .film-content {
     width: 100%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
@@ -434,11 +436,11 @@ a {
 }
 
 .service-card {
+    min-width: 0;
     background: #191919;
     padding: 35px 28px;
     border: 1px solid #292929;
     transition: 0.3s ease;
-    min-width: 0;
 }
 
 .service-card:hover {
@@ -476,33 +478,60 @@ a {
 
 /* =========================================
    HOUSE WARMING
+   CENTER ALIGNMENT FIX
 ========================================= */
 
 .housewarming {
+    width: 100%;
     background: var(--ivory);
     color: var(--black);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.housewarming .section-heading {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 40px;
     text-align: center;
 }
 
 .housewarming-content {
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 25px;
 }
 
-.housewarming-content video {
+.housewarming-content video,
+.housewarming video {
     display: block;
     width: 100%;
+    max-width: 850px;
     max-height: 520px;
+    height: auto;
+    margin: 0 auto;
     background: #000;
     object-fit: contain;
+    position: static;
+    left: auto;
+    right: auto;
+    transform: none;
 }
 
-.housewarming-content .primary-btn {
-    margin-top: 5px;
+.housewarming-content .primary-btn,
+.housewarming .primary-btn {
+    display: inline-flex;
+    align-self: center;
+    margin: 5px auto 0;
 }
 
 
@@ -616,6 +645,7 @@ a {
 ========================================= */
 
 .site-footer {
+    width: 100%;
     background: var(--deep-black);
     color: var(--white);
     padding: 65px 7% 20px;
@@ -897,7 +927,20 @@ a {
         padding: 30px 25px;
     }
 
-    .housewarming-content video {
+    .housewarming {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .housewarming-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .housewarming-content video,
+    .housewarming video {
+        width: 100%;
+        max-width: 100%;
         max-height: 350px;
     }
 
@@ -976,6 +1019,37 @@ a {
     .footer-brand {
         grid-column: auto;
     }
+}
+
+
+/* =========================================
+   FINAL LAYOUT STABILITY
+========================================= */
+
+.site-header,
+main,
+section,
+.site-footer {
+    width: 100%;
+    max-width: 100%;
+}
+
+.housewarming,
+.housewarming-content,
+.film-content,
+.film-image {
+    box-sizing: border-box;
+}
+
+.housewarming video {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.portfolio-grid,
+.services-grid,
+.contact-content {
+    min-width: 0;
 }
 
 
