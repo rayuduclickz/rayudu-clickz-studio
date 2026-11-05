@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 
 <body>
@@ -30,7 +29,6 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#films">Wedding Films</a>
         <a href="#services">Services</a>
-        <a href="#wedding-stories">Wedding Stories</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
@@ -106,11 +104,23 @@
         </div>
 
         <div class="film-content">
-            <div class="film-image">
-                <div class="film-caption">
-                    <p>RAYUDU CLICKZ CINEMATOGRAPHY</p>
-                    <h3>Moments That Move You.</h3>
-                </div>
+            <div class="wedding-video">
+                <video
+                    class="scroll-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    webkit-playsinline
+                    preload="metadata"
+                    disablepictureinpicture
+                    controlslist="nodownload nofullscreen noremoteplayback"
+                    aria-label="Rayudu Clickz Wedding Film">
+
+                    <source src="assets/wedding-stories.mp4.mp4" type="video/mp4">
+
+                    Your browser does not support video playback.
+                </video>
             </div>
         </div>
     </section>
@@ -124,6 +134,7 @@
         </div>
 
         <div class="services-grid">
+
             <article class="service-card">
                 <span>01</span>
                 <h3>Wedding Photography</h3>
@@ -140,8 +151,21 @@
                 <span>03</span>
                 <h3>Couple Portraits</h3>
                 <p>Elegant portraits that celebrate your connection and personality.</p>
-                <video controls playsinline preload="metadata">
+
+                <video
+                    class="scroll-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    webkit-playsinline
+                    preload="metadata"
+                    disablepictureinpicture
+                    controlslist="nodownload nofullscreen noremoteplayback"
+                    aria-label="Couple Portraits Video">
+
                     <source src="assets/couple-portraits.mp4" type="video/mp4">
+
                     Your browser does not support video playback.
                 </video>
             </article>
@@ -163,22 +187,7 @@
                 <h3>Events & Celebrations</h3>
                 <p>House warming, birthdays, engagements and traditional functions.</p>
             </article>
-        </div>
-    </section>
 
-    <!-- WEDDING STORIES VIDEO -->
-    <section class="wedding-stories section-padding" id="wedding-stories">
-        <div class="section-heading">
-            <p class="eyebrow">OUR COLLECTION</p>
-            <h2>Wedding Stories.</h2>
-            <p>Every wedding has a beautiful story to tell.</p>
-        </div>
-
-        <div class="wedding-video">
-            <video controls playsinline preload="metadata">
-                <source src="assets/wedding-stories.mp4.mp4" type="video/mp4">
-                Your browser does not support this video.
-            </video>
         </div>
     </section>
 
@@ -247,7 +256,6 @@
             <a href="#portfolio">Portfolio</a>
             <a href="#films">Wedding Films</a>
             <a href="#services">Services</a>
-            <a href="#wedding-stories">Wedding Stories</a>
             <a href="#contact">Contact</a>
         </div>
 
@@ -272,6 +280,6 @@
     WhatsApp
 </a>
 
-<script src="script.js"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>
