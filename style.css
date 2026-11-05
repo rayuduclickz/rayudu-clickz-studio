@@ -1,7 +1,8 @@
 
 /* =========================================
    RAYUDU CLICKZ STUDIO
-   COMPLETE RESPONSIVE CSS
+   COMPLETE RESPONSIVE STYLESHEET
+   Theme: Black / Ivory / Red
 ========================================= */
 
 :root {
@@ -11,7 +12,6 @@
     --white: #ffffff;
     --red: #c52b35;
     --grey: #a6a19d;
-
     --heading-font: 'Cormorant Garamond', serif;
     --body-font: 'DM Sans', sans-serif;
 }
@@ -85,7 +85,6 @@ textarea {
     font-size: 13px;
 }
 
-
 /* HEADER */
 
 .site-header {
@@ -118,7 +117,7 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 30px;
+    gap: 25px;
 }
 
 .site-header nav a {
@@ -141,7 +140,6 @@ textarea {
     cursor: pointer;
 }
 
-
 /* HERO */
 
 .hero {
@@ -152,12 +150,7 @@ textarea {
     grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
     gap: 55px;
-    background: linear-gradient(
-        110deg,
-        #080808 0%,
-        #111111 55%,
-        #191919 100%
-    );
+    background: linear-gradient(110deg, #080808 0%, #111111 55%, #191919 100%);
     color: var(--white);
 }
 
@@ -207,8 +200,6 @@ textarea {
     color: var(--white);
 }
 
-/* HERO LOGO */
-
 .hero-logo {
     width: 100%;
     min-height: 420px;
@@ -227,7 +218,6 @@ textarea {
     max-height: 350px;
     object-fit: contain;
 }
-
 
 /* OUR STORY */
 
@@ -258,7 +248,6 @@ textarea {
     font-size: 14px;
     margin-bottom: 20px;
 }
-
 
 /* PORTFOLIO */
 
@@ -291,11 +280,7 @@ textarea {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.88),
-        transparent 65%
-    );
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.88), transparent 65%);
 }
 
 .portfolio-item:hover {
@@ -335,7 +320,6 @@ textarea {
     font-weight: 500;
 }
 
-
 /* WEDDING FILMS */
 
 .films {
@@ -366,10 +350,7 @@ textarea {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.45)
-        ),
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
         url("https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1800&q=85");
     background-size: cover;
     background-position: center;
@@ -398,7 +379,6 @@ textarea {
     font-weight: 500;
     line-height: 1.2;
 }
-
 
 /* SERVICES */
 
@@ -452,8 +432,7 @@ textarea {
     background: #000;
 }
 
-
-/* WEDDING STORIES */
+/* WEDDING STORIES VIDEO */
 
 .wedding-stories {
     width: 100%;
@@ -468,20 +447,22 @@ textarea {
     margin: 0 auto 45px;
 }
 
-.wedding-stories video {
+.wedding-video {
     width: 100%;
     max-width: 900px;
-    max-height: 520px;
     margin: 0 auto;
-    display: block;
+    overflow: hidden;
     background: #000;
+}
+
+.wedding-video video {
+    display: block;
+    width: 100%;
+    max-height: 600px;
+    margin: 0 auto;
     object-fit: contain;
+    background: #000;
 }
-
-.wedding-stories .primary-btn {
-    margin-top: 30px;
-}
-
 
 /* QUOTE */
 
@@ -511,7 +492,6 @@ textarea {
     font-size: 10px;
     letter-spacing: 3px;
 }
-
 
 /* CONTACT */
 
@@ -582,11 +562,7 @@ textarea {
     align-self: flex-start;
 }
 
-
-
-/* =========================================
-   FOOTER - FINAL DESIGN FIX
-========================================= */
+/* FOOTER */
 
 .site-footer {
     width: 100%;
@@ -605,7 +581,6 @@ textarea {
     align-items: start;
 }
 
-/* LOGO BACKGROUND */
 .footer-brand img {
     display: block;
     width: 210px;
@@ -625,7 +600,6 @@ textarea {
     line-height: 1.9;
 }
 
-/* FOOTER LINKS */
 .footer-links,
 .footer-social {
     display: flex;
@@ -655,7 +629,6 @@ textarea {
     color: var(--red);
 }
 
-/* COPYRIGHT */
 .footer-bottom {
     max-width: 1250px;
     margin: 50px auto 0;
@@ -669,39 +642,7 @@ textarea {
     font-size: 11px;
 }
 
-/* MOBILE FOOTER */
-@media (max-width: 700px) {
-
-    .site-footer {
-        padding: 55px 7% 22px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px 20px;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-    .footer-brand img {
-        width: 190px;
-    }
-}
-
-@media (max-width: 380px) {
-
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-brand {
-        grid-column: auto;
-    }
-}
-
-/* WHATSAPP */
+/* FLOATING WHATSAPP */
 
 .whatsapp-float {
     position: fixed;
@@ -726,18 +667,16 @@ textarea {
     transform: translateY(-3px);
 }
 
-
 /* TABLET */
 
 @media (max-width: 1000px) {
-
     .site-header {
         padding-left: 5%;
         padding-right: 5%;
     }
 
     .site-header nav {
-        gap: 18px;
+        gap: 15px;
     }
 
     .section-padding {
@@ -771,11 +710,9 @@ textarea {
     }
 }
 
-
 /* MOBILE */
 
 @media (max-width: 700px) {
-
     html {
         scroll-padding-top: 70px;
     }
@@ -925,8 +862,8 @@ textarea {
         padding: 75px 6%;
     }
 
-    .wedding-stories video {
-        max-height: 350px;
+    .wedding-video video {
+        max-height: 400px;
     }
 
     .quote-section {
@@ -959,6 +896,10 @@ textarea {
         grid-column: 1 / -1;
     }
 
+    .footer-brand img {
+        width: 190px;
+    }
+
     .footer-brand p {
         max-width: 300px;
     }
@@ -970,11 +911,9 @@ textarea {
     }
 }
 
-
 /* SMALL MOBILE */
 
 @media (max-width: 380px) {
-
     .hero-content h1 {
         font-size: 46px;
     }
@@ -1004,11 +943,9 @@ textarea {
     }
 }
 
-
 /* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
-
     html {
         scroll-behavior: auto;
     }
