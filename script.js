@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // COPYRIGHT YEAR
@@ -31,6 +30,70 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuButton.textContent = "☰";
             });
         });
+    }
+
+    // SCROLL-BASED VIDEO AUTOPLAY / PAUSE
+    const videos = document.querySelectorAll(".scroll-video");
+
+    videos.forEach(function (video) {
+
+        // Enforce muted autoplay
+        video.muted = true;
+        video.defaultMuted = true;
+        video.loop = true;
+        video.playsInline = true;
+
+        // Prevent native controls
+        video.removeAttribute("controls");
+
+        // Start paused until the video enters the screen
+        video.pause();
+
+    });
+
+    if ("IntersectionObserver" in window) {
+
+        const videoObserver = new IntersectionObserver(function (entries) {
+
+            entries.forEach(function (entry) {
+
+                const video = entry.target;
+
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+
+                    // Play when at least 35% of video is visible
+                    const playPromise = video.play();
+
+                    if (playPromise !== undefined) {
+                        playPromise.catch(function () {
+                            // Browser may block autoplay in some situations
+                        });
+                    }
+
+                } else {
+
+                    // Pause when video leaves the visible screen area
+                    video.pause();
+
+                }
+
+            });
+
+        }, {
+            threshold: [0, 0.35, 0.6]
+        });
+
+        videos.forEach(function (video) {
+            videoObserver.observe(video);
+        });
+
+    } else {
+
+        // Fallback for older browsers
+        videos.forEach(function (video) {
+            video.play().catch(function () {});
+        });
+
     }
 
     // WHATSAPP ENQUIRY FORM
