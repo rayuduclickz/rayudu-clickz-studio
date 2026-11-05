@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // AUTOMATIC COPYRIGHT YEAR
+    // COPYRIGHT YEAR
     const yearElement = document.getElementById("year");
 
     if (yearElement) {
@@ -30,11 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuButton.setAttribute("aria-expanded", "false");
                 menuButton.textContent = "☰";
             });
-
         });
     }
 
-    // ENQUIRY FORM
+    // WHATSAPP ENQUIRY FORM
     const enquiryForm = document.getElementById("enquiry");
 
     if (enquiryForm) {
