@@ -1,11 +1,8 @@
 
 /* =========================================
    RAYUDU CLICKZ STUDIO
-   COMPLETE RESPONSIVE WEBSITE CSS
-   Theme: Black / Ivory / Red
+   COMPLETE RESPONSIVE CSS
 ========================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
     --black: #101010;
@@ -14,7 +11,6 @@
     --white: #ffffff;
     --red: #c52b35;
     --grey: #a6a19d;
-    --dark-grey: #242424;
 
     --heading-font: 'Cormorant Garamond', serif;
     --body-font: 'DM Sans', sans-serif;
@@ -45,7 +41,6 @@ body {
 img,
 video {
     max-width: 100%;
-    display: block;
 }
 
 a {
@@ -91,9 +86,7 @@ textarea {
 }
 
 
-/* =========================================
-   HEADER - IVORY BACKGROUND
-========================================= */
+/* HEADER */
 
 .site-header {
     width: 100%;
@@ -143,15 +136,13 @@ textarea {
     display: none;
     color: var(--black);
     background: transparent;
-    border: none;
+    border: 0;
     font-size: 27px;
     cursor: pointer;
 }
 
 
-/* =========================================
-   HERO SECTION
-========================================= */
+/* HERO */
 
 .hero {
     width: 100%;
@@ -161,13 +152,12 @@ textarea {
     grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
     gap: 55px;
-    background:
-        linear-gradient(
-            110deg,
-            #080808 0%,
-            #111111 55%,
-            #191919 100%
-        );
+    background: linear-gradient(
+        110deg,
+        #080808 0%,
+        #111111 55%,
+        #191919 100%
+    );
     color: var(--white);
 }
 
@@ -217,7 +207,7 @@ textarea {
     color: var(--white);
 }
 
-/* HERO LOGO PANEL */
+/* HERO LOGO */
 
 .hero-logo {
     width: 100%;
@@ -239,9 +229,7 @@ textarea {
 }
 
 
-/* =========================================
-   OUR STORY
-========================================= */
+/* OUR STORY */
 
 .story {
     background: var(--ivory);
@@ -272,9 +260,7 @@ textarea {
 }
 
 
-/* =========================================
-   PORTFOLIO
-========================================= */
+/* PORTFOLIO */
 
 .portfolio {
     background: var(--black);
@@ -350,9 +336,7 @@ textarea {
 }
 
 
-/* =========================================
-   WEDDING FILMS
-========================================= */
+/* WEDDING FILMS */
 
 .films {
     width: 100%;
@@ -416,9 +400,7 @@ textarea {
 }
 
 
-/* =========================================
-   SERVICES
-========================================= */
+/* SERVICES */
 
 .services {
     background: var(--black);
@@ -471,10 +453,7 @@ textarea {
 }
 
 
-/* =========================================
-   WEDDING STORIES
-   Replaces House Warming section
-========================================= */
+/* WEDDING STORIES */
 
 .wedding-stories {
     width: 100%;
@@ -504,9 +483,7 @@ textarea {
 }
 
 
-/* =========================================
-   QUOTE SECTION
-========================================= */
+/* QUOTE */
 
 .quote-section {
     width: 100%;
@@ -536,9 +513,7 @@ textarea {
 }
 
 
-/* =========================================
-   CONTACT
-========================================= */
+/* CONTACT */
 
 .contact {
     background: var(--ivory);
@@ -608,9 +583,7 @@ textarea {
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+/* FOOTER */
 
 .site-footer {
     padding: 65px 7% 20px;
@@ -681,9 +654,7 @@ textarea {
 }
 
 
-/* =========================================
-   FLOATING WHATSAPP
-========================================= */
+/* WHATSAPP */
 
 .whatsapp-float {
     position: fixed;
@@ -709,9 +680,7 @@ textarea {
 }
 
 
-/* =========================================
-   TABLET RESPONSIVE
-========================================= */
+/* TABLET */
 
 @media (max-width: 1000px) {
 
@@ -756,9 +725,7 @@ textarea {
 }
 
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
@@ -957,9 +924,7 @@ textarea {
 }
 
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 380px) {
 
@@ -993,9 +958,7 @@ textarea {
 }
 
 
-/* =========================================
-   ACCESSIBILITY
-========================================= */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
 
