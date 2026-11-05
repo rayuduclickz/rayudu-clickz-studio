@@ -341,43 +341,22 @@ textarea {
     margin: 0 auto;
 }
 
-.film-image {
+.wedding-video {
     width: 100%;
-    min-height: 480px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-        url("https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1800&q=85");
-    background-size: cover;
-    background-position: center;
-}
-
-.film-caption {
-    width: 100%;
-    max-width: 700px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 35px 20px;
-    text-align: center;
-    color: var(--white);
+    overflow: hidden;
+    background: #000;
+    border-radius: 3px;
 }
 
-.film-caption p {
-    color: #f1e8e5;
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.film-caption h3 {
-    color: var(--white);
-    font-family: var(--heading-font);
-    font-size: clamp(30px, 4vw, 46px);
-    font-weight: 500;
-    line-height: 1.2;
+.wedding-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 650px;
+    object-fit: contain;
+    background: #000;
 }
 
 /* SERVICES */
@@ -425,43 +404,15 @@ textarea {
     line-height: 1.9;
 }
 
+/* COUPLE PORTRAITS VIDEO */
+
 .service-card video {
     width: 100%;
     display: block;
     margin-top: 22px;
     background: #000;
-}
-
-/* WEDDING STORIES VIDEO */
-
-.wedding-stories {
-    width: 100%;
-    padding: 100px 7%;
-    background: var(--ivory);
-    color: var(--black);
-    text-align: center;
-}
-
-.wedding-stories .section-heading {
-    max-width: 850px;
-    margin: 0 auto 45px;
-}
-
-.wedding-video {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    overflow: hidden;
-    background: #000;
-}
-
-.wedding-video video {
-    display: block;
-    width: 100%;
-    max-height: 600px;
-    margin: 0 auto;
-    object-fit: contain;
-    background: #000;
+    border-radius: 3px;
+    object-fit: cover;
 }
 
 /* QUOTE */
@@ -670,6 +621,7 @@ textarea {
 /* TABLET */
 
 @media (max-width: 1000px) {
+
     .site-header {
         padding-left: 5%;
         padding-right: 5%;
@@ -713,6 +665,7 @@ textarea {
 /* MOBILE */
 
 @media (max-width: 700px) {
+
     html {
         scroll-padding-top: 70px;
     }
@@ -833,21 +786,18 @@ textarea {
         font-size: 27px;
     }
 
+    /* WEDDING FILMS MOBILE */
+
     .films {
         padding: 75px 6%;
     }
 
-    .film-image {
-        min-height: 350px;
+    .wedding-video video {
+        width: 100%;
+        max-height: 450px;
     }
 
-    .film-caption {
-        padding: 25px 15px;
-    }
-
-    .film-caption h3 {
-        font-size: 34px;
-    }
+    /* SERVICES MOBILE */
 
     .services-grid {
         grid-template-columns: 1fr;
@@ -858,12 +808,8 @@ textarea {
         padding: 30px 25px;
     }
 
-    .wedding-stories {
-        padding: 75px 6%;
-    }
-
-    .wedding-video video {
-        max-height: 400px;
+    .service-card video {
+        width: 100%;
     }
 
     .quote-section {
@@ -873,6 +819,8 @@ textarea {
     .quote-content h2 {
         font-size: 39px;
     }
+
+    /* CONTACT MOBILE */
 
     .contact-content {
         grid-template-columns: 1fr;
@@ -886,6 +834,8 @@ textarea {
     #enquiry .primary-btn {
         width: 100%;
     }
+
+    /* FOOTER MOBILE */
 
     .footer-content {
         grid-template-columns: 1fr 1fr;
@@ -914,6 +864,7 @@ textarea {
 /* SMALL MOBILE */
 
 @media (max-width: 380px) {
+
     .hero-content h1 {
         font-size: 46px;
     }
@@ -930,10 +881,6 @@ textarea {
         min-height: 320px;
     }
 
-    .film-caption h3 {
-        font-size: 29px;
-    }
-
     .footer-content {
         grid-template-columns: 1fr;
     }
@@ -943,9 +890,30 @@ textarea {
     }
 }
 
+/* SMOOTH SCROLL ANIMATION */
+
+@media (prefers-reduced-motion: no-preference) {
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .portfolio-item,
+    .service-card,
+    .primary-btn,
+    .whatsapp-float {
+        transition:
+            transform 0.4s ease,
+            background 0.3s ease,
+            border-color 0.3s ease,
+            color 0.3s ease;
+    }
+}
+
 /* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
