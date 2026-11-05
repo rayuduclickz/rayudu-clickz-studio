@@ -6,448 +6,272 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Rayudu Clickz Studio | Wedding Photography & Cinematography</title>
-
     <meta name="description" content="Rayudu Clickz Studio captures weddings, portraits, pre-wedding shoots and timeless celebrations.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
+<header class="site-header">
+    <a href="#home" class="brand" aria-label="Rayudu Clickz Studio Home">
+        <img src="./assets/rayudu-clickz-logo%20(2).png" alt="Rayudu Clickz Studio Logo">
+    </a>
 
-        <a href="#home" class="brand" aria-label="Rayudu Clickz Studio Home">
-            <img src="./assets/rayudu-clickz-logo%20(2).png"
-                 alt="Rayudu Clickz Studio Logo">
-        </a>
+    <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
 
-        <button class="menu"
-                type="button"
-                aria-label="Open navigation"
-                aria-expanded="false">
-            ☰
-        </button>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#films">Wedding Films</a>
+        <a href="#services">Services</a>
+        <a href="#wedding-stories">Wedding Stories</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-        <nav>
+<main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">RAYUDU CLICKZ</p>
+            <h1>Your Story<br>Our Vision.</h1>
+            <p>Capturing emotions, preserving memories and creating timeless stories.</p>
+            <a href="#portfolio" class="primary-btn">EXPLORE OUR WORK</a>
+        </div>
+
+        <div class="hero-logo">
+            <img src="./assets/rayudu-clickz-logo%20(2).png" alt="Rayudu Clickz Studio Original Logo">
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="story section-padding" id="story">
+        <div class="section-heading">
+            <p class="eyebrow">WHO WE ARE</p>
+            <h2>Every Moment<br>Has a Story.</h2>
+        </div>
+
+        <div class="story-content">
+            <p>At Rayudu Clickz Studio, we believe every photograph holds a beautiful emotion and every celebration deserves to be remembered forever.</p>
+            <p>From weddings and pre-wedding celebrations to portraits and special occasions, we capture genuine moments with creativity and care.</p>
+            <p>Our vision is to turn your precious memories into timeless stories.</p>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio section-padding" id="portfolio">
+        <div class="section-heading">
+            <p class="eyebrow">OUR SELECTED WORK</p>
+            <h2>Stories We Have Captured.</h2>
+            <p>A collection of moments, emotions and celebrations.</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <a href="#contact" class="portfolio-item portfolio-one">
+                <div class="portfolio-overlay">
+                    <span>01 / WEDDINGS</span>
+                    <h3>Wedding Stories</h3>
+                </div>
+            </a>
+
+            <a href="#contact" class="portfolio-item portfolio-two">
+                <div class="portfolio-overlay">
+                    <span>02 / COUPLES</span>
+                    <h3>Pre-Wedding Stories</h3>
+                </div>
+            </a>
+
+            <a href="#contact" class="portfolio-item portfolio-three">
+                <div class="portfolio-overlay">
+                    <span>03 / CELEBRATIONS</span>
+                    <h3>Beautiful Moments</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- WEDDING FILMS -->
+    <section class="films section-padding" id="films">
+        <div class="section-heading">
+            <p class="eyebrow">BEYOND PHOTOGRAPHS</p>
+            <h2>Wedding Films</h2>
+            <p>Relive the emotions, laughter and moments that make your celebration unforgettable.</p>
+        </div>
+
+        <div class="film-content">
+            <div class="film-image">
+                <div class="film-caption">
+                    <p>RAYUDU CLICKZ CINEMATOGRAPHY</p>
+                    <h3>Moments That Move You.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section-padding" id="services">
+        <div class="section-heading">
+            <p class="eyebrow">WHAT WE DO</p>
+            <h2>Our Services</h2>
+            <p>Thoughtfully captured. Beautifully remembered.</p>
+        </div>
+
+        <div class="services-grid">
+            <article class="service-card">
+                <span>01</span>
+                <h3>Wedding Photography</h3>
+                <p>Beautiful wedding photographs capturing every emotion and tradition.</p>
+            </article>
+
+            <article class="service-card">
+                <span>02</span>
+                <h3>Pre-Wedding Shoots</h3>
+                <p>Creative couple portraits and cinematic pre-wedding memories.</p>
+            </article>
+
+            <article class="service-card">
+                <span>03</span>
+                <h3>Couple Portraits</h3>
+                <p>Elegant portraits that celebrate your connection and personality.</p>
+                <video controls playsinline preload="metadata">
+                    <source src="assets/couple-portraits.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </article>
+
+            <article class="service-card">
+                <span>04</span>
+                <h3>Portraits & Celebrations</h3>
+                <p>Maternity, newborn, kids, half saree and special celebration photography.</p>
+            </article>
+
+            <article class="service-card">
+                <span>05</span>
+                <h3>Commercial Photography</h3>
+                <p>Food, product and brand photography with creative presentation.</p>
+            </article>
+
+            <article class="service-card">
+                <span>06</span>
+                <h3>Events & Celebrations</h3>
+                <p>House warming, birthdays, engagements and traditional functions.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- WEDDING STORIES VIDEO -->
+    <section class="wedding-stories section-padding" id="wedding-stories">
+        <div class="section-heading">
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Wedding Stories.</h2>
+            <p>Every wedding has a beautiful story to tell.</p>
+        </div>
+
+        <div class="wedding-video">
+            <video controls playsinline preload="metadata">
+                <source src="assets/wedding-stories.mp4.mp4" type="video/mp4">
+                Your browser does not support this video.
+            </video>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+        <div class="quote-content">
+            <p class="eyebrow">OUR PHILOSOPHY</p>
+            <h2>"Photography is the art of preserving what the heart remembers."</h2>
+            <p>RAYUDU CLICKZ STUDIO</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section-padding" id="contact">
+        <div class="section-heading">
+            <p class="eyebrow">LET'S CREATE MEMORIES</p>
+            <h2>Let's Talk About Your Story.</h2>
+            <p>Tell us about your upcoming celebration.</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-details">
+                <h3>Get In Touch</h3>
+                <p>Have a wedding, event or photoshoot coming up? We would love to hear from you.</p>
+
+                <p>
+                    <strong>Phone / WhatsApp</strong><br>
+                    <a href="tel:+919247129095">+91 92471 29095</a>
+                </p>
+
+                <p>
+                    <strong>Instagram</strong><br>
+                    <a href="https://www.instagram.com/rayudu_clickz/" target="_blank" rel="noopener noreferrer">@rayudu_clickz</a>
+                </p>
+
+                <p>
+                    <strong>YouTube</strong><br>
+                    <a href="https://www.youtube.com/@rayuduclickz27" target="_blank" rel="noopener noreferrer">Rayudu Clickz</a>
+                </p>
+            </div>
+
+            <form id="enquiry">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="event" placeholder="Event Type">
+                <textarea name="message" placeholder="Tell us about your event..." required></textarea>
+                <button type="submit" class="primary-btn">SEND ENQUIRY</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <img src="./assets/rayudu-clickz-logo%20(2).png" alt="Rayudu Clickz Studio Logo">
+            <p>Capturing emotions, preserving memories and creating timeless stories.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
             <a href="#home">Home</a>
             <a href="#story">Our Story</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#films">Wedding Films</a>
             <a href="#services">Services</a>
+            <a href="#wedding-stories">Wedding Stories</a>
             <a href="#contact">Contact</a>
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <!-- HERO -->
-        <section class="hero" id="home">
-
-            <div class="hero-content">
-
-                <p class="eyebrow">RAYUDU CLICKZ</p>
-
-                <h1>Your Story<br>Our Vision.</h1>
-
-                <p>
-                    Capturing emotions, preserving memories
-                    and creating timeless stories.
-                </p>
-
-                <a href="#portfolio" class="primary-btn">
-                    EXPLORE OUR WORK
-                </a>
-
-            </div>
-
-            <div class="hero-logo">
-                <img src="./assets/rayudu-clickz-logo%20(2).png"
-                     alt="Rayudu Clickz Original Logo">
-            </div>
-
-        </section>
-
-
-        <!-- OUR STORY -->
-        <section class="story section-padding" id="story">
-
-            <div class="section-heading">
-                <p class="eyebrow">WHO WE ARE</p>
-                <h2>Every Moment<br>Has a Story.</h2>
-            </div>
-
-            <div class="story-content">
-
-                <p>
-                    At Rayudu Clickz Studio, we believe every photograph
-                    holds a beautiful emotion and every celebration
-                    deserves to be remembered forever.
-                </p>
-
-                <p>
-                    From weddings and pre-wedding celebrations to
-                    portraits and special occasions, we capture
-                    genuine moments with creativity and care.
-                </p>
-
-                <p>
-                    Our vision is to turn your precious memories
-                    into timeless stories.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- PORTFOLIO -->
-        <section class="portfolio section-padding" id="portfolio">
-
-            <div class="section-heading">
-                <p class="eyebrow">OUR SELECTED WORK</p>
-                <h2>Stories We Have Captured.</h2>
-                <p>A collection of moments, emotions and celebrations.</p>
-            </div>
-
-            <div class="portfolio-grid">
-
-                <a href="#contact" class="portfolio-item portfolio-one">
-                    <div class="portfolio-overlay">
-                        <span>01 / WEDDINGS</span>
-                        <h3>Wedding Stories</h3>
-                    </div>
-                </a>
-
-                <a href="#contact" class="portfolio-item portfolio-two">
-                    <div class="portfolio-overlay">
-                        <span>02 / COUPLES</span>
-                        <h3>Pre-Wedding Stories</h3>
-                    </div>
-                </a>
-
-                <a href="#contact" class="portfolio-item portfolio-three">
-                    <div class="portfolio-overlay">
-                        <span>03 / CELEBRATIONS</span>
-                        <h3>Beautiful Moments</h3>
-                    </div>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- WEDDING FILMS -->
-        <section class="films section-padding" id="films">
-
-            <div class="section-heading">
-                <p class="eyebrow">BEYOND PHOTOGRAPHS</p>
-                <h2>Wedding Films</h2>
-                <p>
-                    Relive the emotions, the laughter and the moments
-                    that make your celebration unforgettable.
-                </p>
-            </div>
-
-            <div class="film-content">
-
-                <div class="film-image">
-                    <div class="film-caption">
-                        <p>RAYUDU CLICKZ CINEMATOGRAPHY</p>
-                        <h3>Moments That Move You.</h3>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- SERVICES -->
-        <section class="services section-padding" id="services">
-
-            <div class="section-heading">
-                <p class="eyebrow">WHAT WE DO</p>
-                <h2>Our Services</h2>
-                <p>Thoughtfully captured. Beautifully remembered.</p>
-            </div>
-
-            <div class="services-grid">
-
-                <article class="service-card">
-                    <span>01</span>
-                    <h3>Wedding Photography</h3>
-                    <p>
-                        Beautiful wedding photographs capturing
-                        every emotion and tradition.
-                    </p>
-                </article>
-
-                <article class="service-card">
-                    <span>02</span>
-                    <h3>Pre-Wedding Shoots</h3>
-                    <p>
-                        Creative couple portraits and cinematic
-                        pre-wedding memories.
-                    </p>
-                </article>
-
-                <article class="service-card">
-                    <span>03</span>
-                    <h3>Couple Portraits</h3>
-                    <p>
-                        Elegant portraits that celebrate your
-                        connection and personality.
-                    </p>
-                    <video controls playsinline preload="metadata">
-                        <source src="assets/couple-portraits.mp4" type="video/mp4">
-                        Your browser does not support video playback.
-                    </video>
-                </article>
-
-                <article class="service-card">
-                    <span>04</span>
-                    <h3>Portraits & Celebrations</h3>
-                    <p>
-                        Maternity, newborn, kids, half saree
-                        and special celebration photography.
-                    </p>
-                </article>
-
-                <article class="service-card">
-                    <span>05</span>
-                    <h3>Commercial Photography</h3>
-                    <p>
-                        Food, product and brand photography
-                        with creative presentation.
-                    </p>
-                </article>
-
-                <article class="service-card">
-                    <span>06</span>
-                    <h3>Events & Celebrations</h3>
-                    <p>
-                        House warming, birthdays, engagements
-                        and traditional functions.
-                    </p>
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- WEDDING STORIES -->
-        <section class="wedding-stories" id="wedding-stories">
-
-            <div class="section-heading">
-                <p class="eyebrow">REAL MOMENTS. REAL EMOTIONS.</p>
-                <h2>Wedding Stories</h2>
-                <p>
-                    Every wedding is a unique story.
-                    Let us capture yours beautifully.
-                </p>
-            </div>
-
-            <video controls playsinline preload="metadata">
-                <source src="assets/wedding-stories.mp4" type="video/mp4">
-                Your browser does not support video playback.
-            </video>
-
-            <a href="https://www.instagram.com/rayudu_clickz/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="primary-btn">
-                VIEW MORE STORIES
-            </a>
-
-        </section>
-
-
-        <!-- QUOTE -->
-        <section class="quote-section">
-
-            <div class="quote-content">
-                <p class="eyebrow">OUR PHILOSOPHY</p>
-
-                <h2>
-                    "Photography is the art of
-                    preserving what the heart remembers."
-                </h2>
-
-                <p>RAYUDU CLICKZ STUDIO</p>
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT -->
-        <section class="contact section-padding" id="contact">
-
-            <div class="section-heading">
-                <p class="eyebrow">LET'S CREATE MEMORIES</p>
-                <h2>Let's Talk About Your Story.</h2>
-                <p>Tell us about your upcoming celebration.</p>
-            </div>
-
-            <div class="contact-content">
-
-                <div class="contact-details">
-
-                    <h3>Get In Touch</h3>
-
-                    <p>
-                        Have a wedding, event or photoshoot coming up?
-                        We would love to hear from you.
-                    </p>
-
-                    <p>
-                        <strong>Phone / WhatsApp</strong><br>
-                        <a href="tel:+919247129095">+91 92471 29095</a>
-                    </p>
-
-                    <p>
-                        <strong>Instagram</strong><br>
-                        <a href="https://www.instagram.com/rayudu_clickz/"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            @rayudu_clickz
-                        </a>
-                    </p>
-
-                    <p>
-                        <strong>YouTube</strong><br>
-                        <a href="https://www.youtube.com/@rayuduclickz27"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            Rayudu Clickz
-                        </a>
-                    </p>
-
-                </div>
-
-
-                <form id="enquiry">
-
-                    <input type="text"
-                           name="name"
-                           placeholder="Your Name"
-                           required>
-
-                    <input type="tel"
-                           name="phone"
-                           placeholder="Phone Number"
-                           required>
-
-                    <input type="text"
-                           name="event"
-                           placeholder="Event Type">
-
-                    <textarea name="message"
-                              placeholder="Tell us about your event..."
-                              required></textarea>
-
-                    <button type="submit" class="primary-btn">
-                        SEND ENQUIRY
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-
-        <div class="footer-content">
-
-            <div class="footer-brand">
-
-                <img src="./assets/rayudu-clickz-logo%20(2).png"
-                     alt="Rayudu Clickz Studio Logo">
-
-                <p>
-                    Capturing emotions, preserving memories
-                    and creating timeless stories.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h3>Quick Links</h3>
-
-                <a href="#home">Home</a>
-                <a href="#story">Our Story</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#films">Wedding Films</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-
-            </div>
-
-
-            <div class="footer-social">
-
-                <h3>Follow Us</h3>
-
-                <a href="https://www.instagram.com/rayudu_clickz/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Instagram
-                </a>
-
-                <a href="https://www.youtube.com/@rayuduclickz27"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    YouTube
-                </a>
-
-                <a href="https://wa.me/919247129095"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    WhatsApp
-                </a>
-
-            </div>
-
         </div>
 
-
-        <div class="footer-bottom">
-            <p>
-                © <span id="year"></span> Rayudu Clickz Studio.
-                All Rights Reserved.
-            </p>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="https://www.instagram.com/rayudu_clickz/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.youtube.com/@rayuduclickz27" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://wa.me/919247129095" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
+    </div>
 
-    </footer>
+    <div class="footer-bottom">
+        <p>© <span id="year"></span> Rayudu Clickz Studio. All Rights Reserved.</p>
+    </div>
+</footer>
 
+<a class="whatsapp-float"
+   href="https://wa.me/919247129095?text=Hello%20Rayudu%20Clickz%20Studio%2C%20I%20would%20like%20to%20enquire%20about%20your%20photography%20services."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+    WhatsApp
+</a>
 
-    <!-- FLOATING WHATSAPP -->
-    <a class="whatsapp-float"
-       href="https://wa.me/919247129095?text=Hello%20Rayudu%20Clickz%20Studio%2C%20I%20would%20like%20to%20enquire%20about%20your%20photography%20services."
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Chat with us on WhatsApp">
-        WhatsApp
-    </a>
-
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
