@@ -129,75 +129,100 @@
             <p>Thoughtfully captured. Beautifully remembered.</p>
         </div>
 
-        <div class="services-grid">
+       <div class="services-grid">
 
-            <article class="service-card">
-                <span>01</span>
-                <h3>Wedding Photography</h3>
-                <p>Beautiful wedding photographs capturing every emotion and tradition.</p>
-                <div class="service-image">
-                    <img src="./assets/05-wedding-couple.jpeg" alt="Wedding Photography" loading="lazy">
-                </div>
-            </article>
-
-            <article class="service-card">
-                <span>02</span>
-                <h3>Pre-Wedding Shoots</h3>
-                <p>Creative couple portraits and cinematic pre-wedding memories.</p>
-                <div class="service-image">
-                    <img src="./assets/02-wedding-garland-moment.jpg" alt="Pre-Wedding Shoots" loading="lazy">
-                </div>
-            </article>
-
-            <article class="service-card">
-                <span>03</span>
-                <h3>Couple Portraits</h3>
-                <p>Elegant portraits that celebrate your connection and personality.</p>
-                <video
-                    class="scroll-video"
-                    autoplay
-                    loop
-                    muted
-                    playsinline
-                    webkit-playsinline
-                    preload="metadata"
-                    aria-label="Couple Portraits Video">
-                    <source src="assets/couple-portraits.mp4" type="video/mp4">
-                    Your browser does not support video playback.
-                </video>
-                <div class="service-image">
-                    <img src="./assets/04-couple-portrait.jpeg" alt="Couple Portraits" loading="lazy">
-                </div>
-            </article>
-
-            <article class="service-card">
-                <span>04</span>
-                <h3>Portraits & Celebrations</h3>
-                <p>Maternity, newborn, kids, half saree and special celebration photography.</p>
-                <div class="service-image">
-                    <img src="./assets/04-celebration-portrait.jpg" alt="Portraits and Celebrations" loading="lazy">
-                </div>
-            </article>
-
-            <article class="service-card">
-                <span>05</span>
-                <h3>Commercial Photography</h3>
-                <p>Food, product and brand photography with creative presentation.</p>
-                <div class="service-image">
-                    <img src="./assets/03-milk-product-photography.jpg" alt="Commercial Photography" loading="lazy">
-                </div>
-            </article>
-
-            <article class="service-card">
-                <span>06</span>
-                <h3>Events & Celebrations</h3>
-                <p>House warming, birthdays, engagements and traditional functions.</p>
-                <div class="service-image">
-                    <img src="./assets/02-birthday-portrait.jpg" alt="Events and Celebrations" loading="lazy">
-                </div>
-            </article>
-
+    <!-- 01 WEDDING PHOTOGRAPHY -->
+    <div class="service-card">
+        <div class="service-carousel" data-carousel>
+            <div class="carousel-track">
+                <img src="assets/services/wedding/01-wedding-couple-red-bokeh.jpeg" alt="Wedding Photography">
+                <img src="assets/services/wedding/02-wedding-stage-couple.png" alt="Wedding Photography">
+                <img src="assets/services/wedding/03-wedding.jpeg" alt="Wedding Photography">
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+            <div class="carousel-dots"></div>
         </div>
+        <h3>Wedding Photography</h3>
+        <!-- Keep your existing description here -->
+    </div>
+
+    <!-- 02 PRE-WEDDING SHOOTS -->
+    <div class="service-card">
+        <div class="service-carousel" data-carousel>
+            <div class="carousel-track">
+                <img src="assets/services/pre-wedding/01-sunset-silhouette-couple.jpeg" alt="Pre Wedding Shoot">
+                <img src="assets/services/pre-wedding/02-bike-red-smoke-couple.jpeg" alt="Pre Wedding Shoot">
+                <img src="assets/services/pre-wedding/03-blue-suit-colourful-umbrella.jpeg" alt="Pre Wedding Shoot">
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+            <div class="carousel-dots"></div>
+        </div>
+        <h3>Pre-Wedding Shoots</h3>
+        <!-- Keep your existing description here -->
+    </div>
+
+    <!-- 03 COUPLE PORTRAITS - VIDEO ONLY -->
+    <div class="service-card">
+        <div class="service-video">
+            <video class="scroll-video" autoplay muted loop playsinline>
+                <source src="assets/services/couple-portraits/couple-portraits.mp4" type="video/mp4">
+            </video>
+        </div>
+        <h3>Couple Portraits</h3>
+        <!-- Keep your existing description here -->
+    </div>
+
+    <!-- 04 PORTRAITS & CELEBRATIONS -->
+    <div class="service-card">
+        <div class="service-carousel" data-carousel>
+            <div class="carousel-track">
+                <img src="assets/services/portraits/01-newborn-basket.jpg" alt="Newborn Photography">
+                <img src="assets/services/portraits/02-half-saree-portrait.jpeg" alt="Half Saree Photography">
+                <img src="assets/services/portraits/03-cake-smash-portrait.jpeg" alt="Cake Smash Photography">
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+            <div class="carousel-dots"></div>
+        </div>
+        <h3>Portraits &amp; Celebrations</h3>
+        <!-- Keep your existing description here -->
+    </div>
+
+    <!-- 05 COMMERCIAL PHOTOGRAPHY -->
+    <div class="service-card">
+        <div class="service-carousel" data-carousel>
+            <div class="carousel-track">
+                <img src="assets/services/commercial/01-red-drink-product.jpeg" alt="Product Photography">
+                <img src="assets/services/commercial/02-donut-and-milk-product.jpeg" alt="Product Photography">
+                <img src="assets/services/commercial/03-moringa-product.jpeg" alt="Product Photography">
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+            <div class="carousel-dots"></div>
+        </div>
+        <h3>Commercial Photography</h3>
+        <!-- Keep your existing description here -->
+    </div>
+
+    <!-- 06 EVENTS & CELEBRATIONS -->
+    <div class="service-card">
+        <div class="service-carousel" data-carousel>
+            <div class="carousel-track">
+                <img src="assets/services/events/01-bridal-closeup.jpeg" alt="Event Photography">
+                <img src="assets/services/events/02-wedding-hands-and-bangles.jpeg" alt="Event Photography">
+                <img src="assets/services/events/03-bride-groom-portrait.jpeg" alt="Event Photography">
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+            <div class="carousel-dots"></div>
+        </div>
+        <h3>Events &amp; Celebrations</h3>
+        <!-- Keep your existing description here -->
+    </div>
+
+</div>
     </section>
 
     <!-- QUOTE -->
