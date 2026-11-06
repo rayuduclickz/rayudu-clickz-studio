@@ -1,3 +1,4 @@
+
 // =========================================
 // RAYUDU CLICKZ STUDIO - JAVASCRIPT
 // =========================================
@@ -11,180 +12,96 @@ if (yearElement) {
 }
 
 
-// MOBILE MENU
-const menuToggle = document.querySelector(".menu");
-const navLinks = document.querySelector(".site-header nav");
+// MOBILE NAVIGATION
+const menuButton = document.querySelector(".menu");
+const navigation = document.querySelector(".site-header nav");
 
-if (menuToggle && navLinks) {
+if (menuButton && navigation) {
+    menuButton.addEventListener("click", () => {
+        const isOpen = navigation.classList.toggle("active");
 
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active");
-
-        const isExpanded = navLinks.classList.contains("active");
-
-        menuToggle.setAttribute("aria-expanded", isExpanded);
-        menuToggle.setAttribute(
+        menuButton.setAttribute("aria-expanded", isOpen);
+        menuButton.setAttribute(
             "aria-label",
-            isExpanded ? "Close navigation" : "Open navigation"
+            isOpen ? "Close navigation" : "Open navigation"
         );
 
-        menuToggle.textContent = isExpanded ? "✕" : "☰";
+        menuButton.textContent = isOpen ? "✕" : "☰";
     });
 
-    navLinks.querySelectorAll("a").forEach(link => {
-
+    navigation.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
-
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open navigation");
-
-            menuToggle.textContent = "☰";
+            navigation.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation");
+            menuButton.textContent = "☰";
         });
-
     });
 }
 
 
-// WEDDING FILMS + COUPLE PORTRAITS VIDEO
+// VIDEO INTERACTION
 const videos = document.querySelectorAll(".scroll-video");
 
-videos.forEach(video => {
-
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.controls = false;
-
-    // TAP VIDEO TO TOGGLE SOUND
+videos.forEach((video) => {
     video.addEventListener("click", () => {
-        video.muted = !video.muted;
+        if (video.paused) {
+            video.play().catch(() => {});
+        } else {
+            video.pause();
+        }
     });
-
 });
 
 
-// PLAY VIDEO WHEN VISIBLE
-// PAUSE VIDEO WHEN SCROLLED AWAY
-
+// PLAY / PAUSE VIDEOS WHEN VISIBLE
 if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target;
 
-    const videoObserver = new IntersectionObserver(entries => {
+                if (entry.isIntersecting) {
+                    if (video.hasAttribute("autoplay")) {
+                        video.play().catch(() => {});
+                    }
+                } else {
+                    video.pause();
+                }
+            });
+        },
+        {
+            threshold: 0.25
+        }
+    );
 
-        entries.forEach(entry => {
-
-            const video = entry.target;
-
-            if (
-                entry.isIntersecting &&
-                entry.intersectionRatio >= 0.35
-            ) {
-
-                video.play().catch(error => {
-                    console.log("Video playback issue:", error);
-                });
-
-            } else {
-
-                video.pause();
-                video.muted = true;
-
-            }
-
-        });
-
-    }, {
-        threshold: [0, 0.35, 0.6]
-    });
-
-    videos.forEach(video => {
+    videos.forEach((video) => {
         videoObserver.observe(video);
     });
-
 }
 
 
-// SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function(event) {
-
-        const href = this.getAttribute("href");
-
-        if (!href || href === "#") return;
-
-        const target = document.querySelector(href);
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
-
-
-// WHATSAPP ENQUIRY FORM
-const enquiryForm = document.querySelector("#enquiry");
-
-if (enquiryForm) {
-
-    enquiryForm.addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        const formData = new FormData(enquiryForm);
-
-        const name = formData.get("name") || "";
-        const phone = formData.get("phone") || "";
-        const eventType = formData.get("event") || "";
-        const message = formData.get("message") || "";
-
-        const whatsappMessage =
-            `Hello Rayudu Clickz Studio!\n\n` +
-            `Name: ${name}\n` +
-            `Phone: ${phone}\n` +
-            `Event Type: ${eventType}\n` +
-            `Message: ${message}`;
-
-        const whatsappNumber = "919247129095";
-
-        const whatsappURL =
-            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-        window.open(
-            whatsappURL,
-            "_blank",
-            "noopener,noreferrer"
-        );
-
-    });
-
-}
-/* SERVICE CAROUSEL */
-
+// SERVICE IMAGE CAROUSELS
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+
     const track = carousel.querySelector(".carousel-track");
     const images = Array.from(track.querySelectorAll("img"));
-    const prevBtn = carousel.querySelector(".carousel-btn.prev");
-    const nextBtn = carousel.querySelector(".carousel-btn.next");
+
+    const prevButton = carousel.querySelector(".carousel-btn.prev");
+    const nextButton = carousel.querySelector(".carousel-btn.next");
     const dotsContainer = carousel.querySelector(".carousel-dots");
+
+    if (!track || images.length === 0) return;
 
     let currentIndex = 0;
 
-    images.forEach((_, index) => {
-        const dot = document.createElement("button");
-        dot.classList.add("carousel-dot");
+    // CREATE DOT INDICATORS
+    images.forEach((image, index) => {
 
+        const dot = document.createElement("button");
+
+        dot.type = "button";
+        dot.className = "carousel-dot";
         dot.setAttribute("aria-label", `Go to image ${index + 1}`);
 
         dot.addEventListener("click", () => {
@@ -197,23 +114,73 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
 
     const dots = Array.from(dotsContainer.children);
 
+    // UPDATE CAROUSEL
     function updateCarousel() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        track.style.transform =
+            `translateX(-${currentIndex * 100}%)`;
 
         dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentIndex);
+            dot.classList.toggle(
+                "active",
+                index === currentIndex
+            );
         });
     }
 
-    prevBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateCarousel();
-    });
+    // PREVIOUS IMAGE
+    if (prevButton) {
+        prevButton.addEventListener("click", () => {
 
-    nextBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
-    });
+            currentIndex =
+                (currentIndex - 1 + images.length) % images.length;
+
+            updateCarousel();
+        });
+    }
+
+    // NEXT IMAGE
+    if (nextButton) {
+        nextButton.addEventListener("click", () => {
+
+            currentIndex =
+                (currentIndex + 1) % images.length;
+
+            updateCarousel();
+        });
+    }
 
     updateCarousel();
 });
+
+
+// ENQUIRY FORM - WHATSAPP
+const enquiryForm = document.getElementById("enquiry");
+
+if (enquiryForm) {
+
+    enquiryForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const formData = new FormData(enquiryForm);
+
+        const name = formData.get("name")?.trim() || "";
+        const phone = formData.get("phone")?.trim() || "";
+        const eventType = formData.get("event")?.trim() || "";
+        const message = formData.get("message")?.trim() || "";
+
+        const whatsappMessage =
+            `Hello Rayudu Clickz Studio!\n\n` +
+            `Name: ${name}\n` +
+            `Phone: ${phone}\n` +
+            `Event Type: ${eventType}\n` +
+            `Message: ${message}`;
+
+        const whatsappURL =
+            "https://wa.me/919247129095?text=" +
+            encodeURIComponent(whatsappMessage);
+
+        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    });
+}
