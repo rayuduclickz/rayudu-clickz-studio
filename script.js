@@ -31,31 +31,22 @@ videos.forEach(video => {
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
-
-    // Hide native video controls
     video.controls = false;
-    video.removeAttribute("controls");
 
-    // Click video to toggle audio
+    // TAP VIDEO TO TOGGLE SOUND
     video.addEventListener("click", () => {
         video.muted = !video.muted;
-
-        if (video.paused) {
-            video.play().catch(error => {
-                console.log("Video playback issue:", error);
-            });
-        }
     });
 });
 
-// PLAY VIDEO WHEN VISIBLE, PAUSE WHEN OUT OF VIEW
+// PLAY WHEN VISIBLE, PAUSE WHEN SCROLLED AWAY
 const videoObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         const video = entry.target;
 
         if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
             video.play().catch(error => {
-                console.log("Autoplay blocked:", error);
+                console.log("Video playback issue:", error);
             });
         } else {
             video.pause();
@@ -77,6 +68,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         if (target) {
             event.preventDefault();
+
             target.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
@@ -109,15 +101,5 @@ if (enquiryForm) {
             `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
             "_blank"
         );
-        /* VIDEO AUDIO INTERACTION */
-
-.scroll-video {
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.scroll-video::-webkit-media-controls {
-    display: none !important;
-}
     });
 }
