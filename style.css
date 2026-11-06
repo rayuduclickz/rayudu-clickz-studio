@@ -969,3 +969,13 @@ textarea {
         animation-duration: 0.01ms !important;
     }
 }
+/* VIDEO INTERACTION */
+
+.scroll-video {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-video::-webkit-media-controls {
+    display: none !important;
+}
