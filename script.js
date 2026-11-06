@@ -23,12 +23,12 @@ if (menuToggle && navLinks) {
 
     menuToggle.addEventListener("click", () => {
 
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active");
+        const isExpanded = navLinks.classList.toggle("active");
 
-        const isExpanded = navLinks.classList.contains("active");
+        menuToggle.classList.toggle("active", isExpanded);
 
-        menuToggle.setAttribute("aria-expanded", isExpanded);
+        menuToggle.setAttribute("aria-expanded", String(isExpanded));
+
         menuToggle.setAttribute(
             "aria-label",
             isExpanded ? "Close navigation" : "Open navigation"
@@ -72,7 +72,9 @@ videos.forEach(video => {
 
     // TAP VIDEO TO TOGGLE SOUND
     video.addEventListener("click", () => {
+
         video.muted = !video.muted;
+
     });
 
 });
@@ -164,10 +166,10 @@ if (enquiryForm) {
 
         const formData = new FormData(enquiryForm);
 
-        const name = formData.get("name") || "";
-        const phone = formData.get("phone") || "";
-        const eventType = formData.get("event") || "";
-        const message = formData.get("message") || "";
+        const name = (formData.get("name") || "").trim();
+        const phone = (formData.get("phone") || "").trim();
+        const eventType = (formData.get("event") || "").trim();
+        const message = (formData.get("message") || "").trim();
 
         const whatsappMessage =
             `Hello Rayudu Clickz Studio!\n\n` +
@@ -199,11 +201,8 @@ if (enquiryForm) {
 document.querySelectorAll("[data-carousel]").forEach(carousel => {
 
     const track = carousel.querySelector(".carousel-track");
-
     const prevBtn = carousel.querySelector(".carousel-btn.prev");
-
     const nextBtn = carousel.querySelector(".carousel-btn.next");
-
     const dotsContainer = carousel.querySelector(".carousel-dots");
 
     // SAFETY CHECKS
@@ -214,6 +213,9 @@ document.querySelectorAll("[data-carousel]").forEach(carousel => {
     if (images.length === 0) return;
 
     let currentIndex = 0;
+
+    // CLEAR OLD DOTS
+    dotsContainer.innerHTML = "";
 
     // CREATE DOTS
     images.forEach((image, index) => {
@@ -227,6 +229,8 @@ document.querySelectorAll("[data-carousel]").forEach(carousel => {
             "aria-label",
             `Go to image ${index + 1}`
         );
+
+        dot.setAttribute("aria-current", "false");
 
         dot.addEventListener("click", () => {
 
@@ -251,9 +255,13 @@ document.querySelectorAll("[data-carousel]").forEach(carousel => {
 
         dots.forEach((dot, index) => {
 
-            dot.classList.toggle(
-                "active",
-                index === currentIndex
+            const isActive = index === currentIndex;
+
+            dot.classList.toggle("active", isActive);
+
+            dot.setAttribute(
+                "aria-current",
+                String(isActive)
             );
 
         });
@@ -291,8 +299,61 @@ document.querySelectorAll("[data-carousel]").forEach(carousel => {
     }
 
 
+    // MOBILE SWIPE SUPPORT
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener("touchstart", event => {
+
+        touchStartX = event.changedTouches[0].screenX;
+
+    }, { passive: true });
+
+    track.addEventListener("touchend", event => {
+
+        touchEndX = event.changedTouches[0].screenX;
+
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (Math.abs(swipeDistance) < 45) return;
+
+        if (swipeDistance < 0) {
+
+            currentIndex =
+                (currentIndex + 1) % images.length;
+
+        } else {
+
+            currentIndex =
+                (currentIndex - 1 + images.length) % images.length;
+
+        }
+
+        updateCarousel();
+
+    }, { passive: true });
+
+
     // INITIALIZE
     updateCarousel();
+
+});
+
+
+// =========================================
+// SERVICE IMAGE LOADING DIAGNOSTICS
+// =========================================
+
+document.querySelectorAll(".service-carousel img").forEach(image => {
+
+    image.addEventListener("error", () => {
+
+        console.error(
+            "Service image could not load:",
+            image.getAttribute("src")
+        );
+
+    });
 
 });
 
