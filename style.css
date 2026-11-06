@@ -38,8 +38,6 @@ body {
     color: var(--black);
     font-family: var(--body-font);
     line-height: 1.7;
-
-    /* OUTER BLACK BORDER */
     border: 4px solid #000;
 }
 
@@ -155,7 +153,6 @@ textarea {
     grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
     gap: 55px;
-
     background: var(--ivory);
     color: var(--black);
 }
@@ -207,7 +204,7 @@ textarea {
     color: var(--black);
 }
 
-/* HERO LOGO - NO RECTANGLE */
+/* HERO LOGO */
 
 .hero-logo {
     width: 100%;
@@ -216,7 +213,6 @@ textarea {
     align-items: center;
     justify-content: center;
     padding: 35px;
-
     background: transparent;
     border: none;
     border-radius: 0;
@@ -403,10 +399,14 @@ textarea {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
+    align-items: stretch;
 }
 
 .service-card {
     min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     padding: 35px 28px;
     background: #191919;
     border: 1px solid #292929;
@@ -437,15 +437,117 @@ textarea {
     line-height: 1.9;
 }
 
-.service-card video {
+/* SERVICE IMAGE CAROUSEL */
+
+.service-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    margin-top: 22px;
+    background: #111;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.45s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* CAROUSEL ARROWS */
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background: var(--red);
+}
+
+/* CAROUSEL DOTS */
+
+.carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    z-index: 5;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    width: 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* COUPLE PORTRAITS VIDEO ONLY */
+
+.service-video {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    margin-top: 22px;
+    overflow: hidden;
+    background: #000;
+}
+
+.service-video video {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 520px;
-    aspect-ratio: auto;
+    height: 100%;
+    max-height: none;
+    margin: 0;
     object-fit: contain;
     object-position: center;
-    margin-top: 22px;
     background: #000;
 }
 
@@ -479,6 +581,17 @@ textarea {
     margin: 0 auto;
     object-fit: contain;
     background: #000;
+}
+
+/* VIDEO INTERACTION */
+
+.scroll-video {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-video::-webkit-media-controls {
+    display: none !important;
 }
 
 /* QUOTE */
@@ -687,6 +800,7 @@ textarea {
 /* TABLET */
 
 @media (max-width: 1000px) {
+
     .site-header {
         padding-left: 5%;
         padding-right: 5%;
@@ -730,6 +844,7 @@ textarea {
 /* MOBILE */
 
 @media (max-width: 700px) {
+
     html {
         scroll-padding-top: 70px;
     }
@@ -875,6 +990,12 @@ textarea {
         padding: 30px 25px;
     }
 
+    .service-carousel,
+    .service-video {
+        aspect-ratio: 4 / 5;
+        margin-top: 18px;
+    }
+
     .wedding-stories {
         padding: 75px 6%;
     }
@@ -931,6 +1052,7 @@ textarea {
 /* SMALL MOBILE */
 
 @media (max-width: 380px) {
+
     .hero-content h1 {
         font-size: 46px;
     }
@@ -960,20 +1082,6 @@ textarea {
     }
 }
 
-/* ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-    }
-}
 /* VIDEO INTERACTION */
 
 .scroll-video {
@@ -984,209 +1092,22 @@ textarea {
 .scroll-video::-webkit-media-controls {
     display: none !important;
 }
-/* =========================================
-   SERVICE CARD IMAGES
-========================================= */
 
-.services-grid {
-    align-items: stretch;
-}
-
-.service-card {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    overflow: hidden;
-}
-
-.service-card h3 {
-    margin-top: 18px;
-}
-
-.service-card p {
-    margin-bottom: 0;
-}
-
-.service-image {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    margin-top: 22px;
-    overflow: hidden;
-    position: relative;
-    background: #242424;
-}
-
-.service-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.6s ease;
-}
-
-.service-card:hover .service-image img {
-    transform: scale(1.045);
-}
-
-.service-card video {
-    width: 100%;
-    display: block;
-    margin-top: 22px;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    background: #000;
-}
-
-/* TABLET */
-@media (max-width: 1000px) {
-    .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* MOBILE */
-@media (max-width: 700px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card {
-        padding: 30px 25px;
-    }
-
-    .service-image {
-        aspect-ratio: 4 / 5;
-        margin-top: 18px;
-    }
-}
-
-/* REDUCED MOTION */
-@media (prefers-reduced-motion: reduce) {
-    .service-image img {
-        transition: none;
-    }
-}
-
-/* =========================================
-   SERVICE IMAGE CAROUSEL
-========================================= */
-
-.service-carousel {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    margin-top: 22px;
-    background: #111;
-}
-
-.carousel-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.45s ease-in-out;
-}
-
-.carousel-track img {
-    flex: 0 0 100%;
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.65);
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.carousel-btn.prev {
-    left: 10px;
-}
-
-.carousel-btn.next {
-    right: 10px;
-}
-
-.carousel-btn:hover {
-    background: #c52b35;
-}
-
-.carousel-dots {
-    position: absolute;
-    bottom: 12px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    z-index: 5;
-}
-
-.carousel-dot {
-    width: 8px;
-    height: 8px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.55);
-    cursor: pointer;
-}
-
-.carousel-dot.active {
-    background: #fff;
-    transform: scale(1.25);
-}
-
-/* COUPLE PORTRAITS VIDEO */
-
-.service-video {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    margin-top: 22px;
-    overflow: hidden;
-    background: #000;
-}
-
-.service-video video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    margin: 0;
-    aspect-ratio: auto;
-    object-fit: contain;
-    background: #000;
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-    .service-carousel,
-    .service-video {
-        aspect-ratio: 4 / 5;
-    }
-}
-
-/* REDUCED MOTION */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
     .carousel-track {
         transition: none;
     }
