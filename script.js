@@ -1,18 +1,26 @@
-// RAYUDU CLICKZ STUDIO - WEBSITE JAVASCRIPT
 
-// Footer year
+// =========================================
+// RAYUDU CLICKZ STUDIO
+// COMPLETE JAVASCRIPT
+// =========================================
+
+// FOOTER YEAR
 const yearElement = document.getElementById("year");
-if (yearElement) yearElement.textContent = new Date().getFullYear();
 
-// Mobile navigation
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+
+// MOBILE MENU
 const menuButton = document.querySelector(".menu");
-const navigation = document.querySelector(".site-nav");
+const navigation = document.querySelector(".site-header nav");
 
 if (menuButton && navigation) {
     menuButton.addEventListener("click", () => {
         const isOpen = navigation.classList.toggle("active");
+
         menuButton.setAttribute("aria-expanded", String(isOpen));
-        menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
         menuButton.textContent = isOpen ? "✕" : "☰";
     });
 
@@ -20,13 +28,16 @@ if (menuButton && navigation) {
         link.addEventListener("click", () => {
             navigation.classList.remove("active");
             menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open navigation");
             menuButton.textContent = "☰";
         });
     });
 }
 
-// Video autoplay and audio interaction
+
+// =========================================
+// WEDDING FILMS + COUPLE PORTRAITS VIDEOS
+// =========================================
+
 const videos = document.querySelectorAll(".scroll-video");
 
 videos.forEach(video => {
@@ -34,62 +45,71 @@ videos.forEach(video => {
     video.defaultMuted = true;
     video.loop = true;
     video.playsInline = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
     video.controls = false;
+
     video.removeAttribute("controls");
 
-    // Tap/click to toggle sound. Muted autoplay is used initially
-    // because browsers generally block autoplay with sound.
+    // TAP TO TOGGLE SOUND
     video.addEventListener("click", () => {
         video.muted = !video.muted;
-        if (video.paused) video.play().catch(err => console.warn("Video playback blocked:", err));
+
+        if (video.paused) {
+            video.play().catch(error => {
+                console.log("Video playback error:", error);
+            });
+        }
     });
 });
 
+
+// =========================================
+// AUTOPLAY WHEN VISIBLE
+// PAUSE WHEN OUTSIDE SCREEN
+// =========================================
+
 if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => {
+    const videoObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             const video = entry.target;
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-                video.play().catch(err => console.warn("Muted autoplay blocked:", err));
+
+            if (
+                entry.isIntersecting &&
+                entry.intersectionRatio >= 0.35
+            ) {
+                video.play().catch(error => {
+                    console.log("Autoplay blocked:", error);
+                });
             } else {
                 video.pause();
                 video.muted = true;
             }
         });
-    }, { threshold: [0, 0.35, 0.6] });
+    }, {
+        threshold: [0, 0.35, 0.6]
+    });
 
-    videos.forEach(video => observer.observe(video));
-} else {
-    videos.forEach(video => video.play().catch(() => {}));
+    videos.forEach(video => {
+        videoObserver.observe(video);
+    });
 }
 
-// Smooth in-page scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", event => {
-        const selector = anchor.getAttribute("href");
-        if (!selector || selector === "#") return;
-        const target = document.querySelector(selector);
-        if (!target) return;
-        event.preventDefault();
-        target.scrollIntoView({
-            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-            block: "start"
-        });
-    });
-});
 
-// WhatsApp enquiry form
+// =========================================
+// WHATSAPP ENQUIRY FORM
+// =========================================
+
 const enquiryForm = document.getElementById("enquiry");
+
 if (enquiryForm) {
     enquiryForm.addEventListener("submit", event => {
         event.preventDefault();
+
         const formData = new FormData(enquiryForm);
-        const name = String(formData.get("name") || "").trim();
-        const phone = String(formData.get("phone") || "").trim();
-        const eventType = String(formData.get("event") || "").trim();
-        const message = String(formData.get("message") || "").trim();
+
+        const name = formData.get("name") || "";
+        const phone = formData.get("phone") || "";
+        const eventType = formData.get("event") || "";
+        const message = formData.get("message") || "";
 
         const whatsappMessage =
             "Hello Rayudu Clickz Studio!\n\n" +
@@ -98,7 +118,18 @@ if (enquiryForm) {
             "Event Type: " + eventType + "\n" +
             "Message: " + message;
 
-        const whatsappURL = "https://wa.me/919247129095?text=" + encodeURIComponent(whatsappMessage);
-        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+        const whatsappNumber = "919247129095";
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(whatsappMessage);
+
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
     });
 }
