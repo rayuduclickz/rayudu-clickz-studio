@@ -438,8 +438,13 @@ textarea {
 }
 
 .service-card video {
-    width: 100%;
     display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
     margin-top: 22px;
     background: #000;
 }
