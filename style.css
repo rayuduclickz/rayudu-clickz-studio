@@ -53,9 +53,18 @@ button,input,textarea{font:inherit}
 .portfolio-item:hover{transform:translateY(-5px)}
 
 /* UPDATED PORTFOLIO PHOTOS */
-.portfolio-one{background-image:url("./assets/wedding-stories.jpg")}
-.portfolio-two{background-image:url("./assets/prewed01.jpeg")}
-.portfolio-three{background-image:url("./assets/01%20-event.jpeg")}
+/* UPDATED PORTFOLIO PHOTOS */
+.portfolio-one {
+    background-image: url("./assets/wedding-stories.jpeg");
+}
+
+.portfolio-two {
+    background-image: url("./assets/prewed01.jpeg");
+}
+
+.portfolio-three {
+    background-image: url("./assets/01%20-event.jpeg");
+}
 .portfolio-overlay{width:100%;padding:25px;position:relative;z-index:1}
 .portfolio-overlay span{display:block;color:var(--red);font-size:11px;letter-spacing:2px;margin-bottom:5px}
 .portfolio-overlay h3{font-family:var(--heading-font);font-size:27px;font-weight:500}
