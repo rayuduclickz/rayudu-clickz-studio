@@ -205,3 +205,26 @@ button,input,textarea{font:inherit}
  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
  .carousel-track{transition:none}
 }
+/* CENTER REMAINING SERVICE CARDS */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+.service-card {
+    width: calc(33.333% - 12px);
+}
+
+@media (max-width: 1000px) {
+    .service-card {
+        width: calc(50% - 9px);
+    }
+}
+
+@media (max-width: 700px) {
+    .service-card {
+        width: 100%;
+    }
+}
