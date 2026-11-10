@@ -172,7 +172,7 @@ if (enquiryForm) {
         const message = (formData.get("message") || "").trim();
 
         const whatsappMessage =
-            `Hello Rayudu Clickz Studio!\n\n` +
+            `Hello Rayudu Clickz!\n\n` +
             `Name: ${name}\n` +
             `Phone: ${phone}\n` +
             `Event Type: ${eventType}\n` +
