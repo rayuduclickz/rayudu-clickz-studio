@@ -81,43 +81,115 @@ videos.forEach(video => {
 
 
 // =========================================
-// PLAY VIDEO WHEN VISIBLE
-// Load video bytes only when the video approaches the viewport.
+// LAZY LOAD VIDEO SOURCE
 // =========================================
 
 function loadVideoSource(video) {
+
     const source = video.querySelector("source[data-src]");
+
     if (source && !source.getAttribute("src")) {
+
         source.setAttribute("src", source.dataset.src);
+
+        source.removeAttribute("data-src");
+
         video.load();
+
     }
+
 }
 
+
+// =========================================
+// PLAY VIDEO WHEN VISIBLE
+// PAUSE VIDEO WHEN OUT OF VIEW
+// PRESERVE SOUND SETTING
+// =========================================
+
+function playVideoWhenReady(video) {
+
+    if (video.readyState >= 2) {
+
+        video.play().catch(() => {});
+
+    } else {
+
+        video.addEventListener("canplay", function onCanPlay() {
+
+            video.removeEventListener("canplay", onCanPlay);
+
+            // Play only if video is still visible
+            if (video.dataset.inView === "true") {
+
+                video.play().catch(() => {});
+
+            }
+
+        });
+
+    }
+
+}
+
+
 if ("IntersectionObserver" in window) {
+
     const videoObserver = new IntersectionObserver(entries => {
+
         entries.forEach(entry => {
+
             const video = entry.target;
 
             if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+
+                video.dataset.inView = "true";
+
+                // Load video only when needed
                 loadVideoSource(video);
-                video.play().catch(() => {
-                    // Autoplay may be blocked by browser/device settings.
-                });
-            } } else {
-              video.pause();
+
+                // Play when ready
+                playVideoWhenReady(video);
+
+            } else {
+
+                video.dataset.inView = "false";
+
+                // Pause video but preserve mute/unmute state
+                video.pause();
+
             }
+
         });
+
     }, {
+
         threshold: [0, 0.35, 0.6]
+
     });
 
-    videos.forEach(video => videoObserver.observe(video));
-} else {
-    // Fallback for older browsers: make the video available for playback.
     videos.forEach(video => {
-        loadVideoSource(video);
-        video.play().catch(() => {});
+
+        video.dataset.inView = "false";
+
+        videoObserver.observe(video);
+
     });
+
+} else {
+
+    // FALLBACK FOR OLDER BROWSERS
+
+    videos.forEach(video => {
+
+        video.dataset.inView = "true";
+
+        loadVideoSource(video);
+
+        playVideoWhenReady(video);
+
+    });
+
 }
 
 
