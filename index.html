@@ -11,14 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./style.css?v=13">
+    <link rel="preload" as="image" href="./assets/rayudu-clickz-logo%20(2).webp" fetchpriority="high">
+    <link rel="stylesheet" href="./style.css?v=14">
 </head>
 
 <body>
 
 <header class="site-header">
     <a href="#home" class="brand" aria-label="Rayudu Clickz Home">
-        <img src="./assets/rayudu-clickz-logo%20(2).png" alt="Rayudu Clickz Logo">
+        <img src="./assets/rayudu-clickz-logo%20(2).webp" alt="Rayudu Clickz Logo" width="1200" height="574" loading="eager" decoding="async">
     </a>
 
     <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
@@ -45,7 +46,7 @@
         </div>
 
         <div class="hero-logo">
-            <img src="./assets/rayudu-clickz-logo%20(2).png" alt="Rayudu Clickz Original Logo">
+            <img src="./assets/rayudu-clickz-logo%20(2).webp" alt="Rayudu Clickz Original Logo" width="1200" height="574" loading="eager" fetchpriority="high" decoding="async">
         </div>
     </section>
 
@@ -73,6 +74,7 @@
 
         <div class="portfolio-grid">
             <a href="#contact" class="portfolio-item portfolio-one">
+                <img class="portfolio-image" src="./assets/wedding-stories.webp" alt="Wedding photography portfolio" width="719" height="900" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <span>01 / WEDDINGS</span>
                     <h3>Wedding Stories</h3>
@@ -80,6 +82,7 @@
             </a>
 
             <a href="#contact" class="portfolio-item portfolio-two">
+                <img class="portfolio-image" src="./assets/prewed01.webp" alt="Pre-wedding photography portfolio" width="1000" height="1503" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <span>02 / COUPLES</span>
                     <h3>Pre-Wedding Stories</h3>
@@ -87,6 +90,7 @@
             </a>
 
             <a href="#contact" class="portfolio-item portfolio-three">
+                <img class="portfolio-image" src="./assets/01%20-event.webp" alt="Celebration photography portfolio" width="720" height="900" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <span>03 / CELEBRATIONS</span>
                     <h3>Beautiful Moments</h3>
@@ -105,8 +109,8 @@
 
         <div class="film-content">
             <div class="wedding-video">
-                <video class="scroll-video" autoplay loop muted playsinline preload="metadata" aria-label="Rayudu Clickz Wedding Film">
-                    <source src="./assets/wedding-stories.mp4.mp4" type="video/mp4">
+                <video class="scroll-video" loop muted playsinline preload="none" aria-label="Rayudu Clickz Wedding Film">
+                    <source data-src="./assets/wedding-stories-optimized.mp4" type="video/mp4">
                     Your browser does not support video playback.
                 </video>
             </div>
@@ -127,9 +131,9 @@
             <div class="service-card">
                 <div class="service-carousel" data-carousel>
                     <div class="carousel-track">
-                        <img src="./assets/marriage.jpeg" alt="Wedding Photography - Image 1">
-                        <img src="./assets/02-wedding-stage-couple.png" alt="Wedding Photography - Image 2">
-                        <img src="./assets/03-wedding.jpeg" alt="Wedding Photography - Image 3">
+                        <img src="./assets/marriage.webp" alt="Wedding Photography - Image 1" width="720" height="1072" loading="lazy" decoding="async">
+                        <img src="./assets/02-wedding-stage-couple.webp" alt="Wedding Photography - Image 2" width="720" height="847" loading="lazy" decoding="async">
+                        <img src="./assets/03-wedding.webp" alt="Wedding Photography - Image 3" width="720" height="908" loading="lazy" decoding="async">
                     </div>
                     <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
                     <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
@@ -142,9 +146,9 @@
             <div class="service-card">
                 <div class="service-carousel" data-carousel>
                     <div class="carousel-track">
-                        <img src="./assets/prewed01.jpeg" alt="Pre Wedding Shoot - Image 1">
-                        <img src="./assets/prewed02.jpeg" alt="Pre Wedding Shoot - Image 2">
-                        <img src="./assets/prewed03.jpeg" alt="Pre Wedding Shoot - Image 3">
+                        <img src="./assets/prewed01.webp" alt="Pre Wedding Shoot - Image 1" width="1000" height="1503" loading="lazy" decoding="async">
+                        <img src="./assets/prewed02.webp" alt="Pre Wedding Shoot - Image 2" width="720" height="1076" loading="lazy" decoding="async">
+                        <img src="./assets/prewed03.webp" alt="Pre Wedding Shoot - Image 3" width="720" height="484" loading="lazy" decoding="async">
                     </div>
                     <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
                     <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
@@ -156,8 +160,8 @@
             <!-- Couple Portraits -->
             <div class="service-card">
                 <div class="service-video">
-                    <video class="scroll-video" autoplay muted loop playsinline preload="metadata" aria-label="Couple Portraits Video">
-                        <source src="./assets/couple-portraits.mp4" type="video/mp4">
+                    <video class="scroll-video" muted loop playsinline preload="none" aria-label="Couple Portraits Video">
+                        <source data-src="./assets/couple-portraits-optimized.mp4" type="video/mp4">
                         Your browser does not support video playback.
                     </video>
                 </div>
@@ -168,9 +172,9 @@
             <div class="service-card">
                 <div class="service-carousel" data-carousel>
                     <div class="carousel-track">
-                        <img src="./assets/01-newborn-basket.jpg" alt="Newborn Photography">
-                        <img src="./assets/newbornkk.jpeg" alt="Newborn Photography 2">
-                        <img src="./assets/kkk.jpeg" alt="Family Photography">
+                        <img src="./assets/01-newborn-basket.webp" alt="Newborn Photography" width="719" height="495" loading="lazy" decoding="async">
+                        <img src="./assets/newbornkk.webp" alt="Newborn Photography 2" width="720" height="1086" loading="lazy" decoding="async">
+                        <img src="./assets/kkk.webp" alt="Family Photography" width="720" height="903" loading="lazy" decoding="async">
                     </div>
                     <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
                     <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
@@ -183,9 +187,9 @@
             <div class="service-card">
                 <div class="service-carousel" data-carousel>
                     <div class="carousel-track">
-                        <img src="./assets/01-red-drink-product.jpeg" alt="Red Drink Product Photography">
-                        <img src="./assets/02-donut-and-milk-product.jpeg" alt="Donut and Milk Product Photography">
-                        <img src="./assets/03-moringa-product.jpeg" alt="Moringa Product Photography">
+                        <img src="./assets/01-red-drink-product.webp" alt="Red Drink Product Photography" width="720" height="883" loading="lazy" decoding="async">
+                        <img src="./assets/02-donut-and-milk-product.webp" alt="Donut and Milk Product Photography" width="1196" height="748" loading="lazy" decoding="async">
+                        <img src="./assets/03-moringa-product.webp" alt="Moringa Product Photography" width="719" height="806" loading="lazy" decoding="async">
                     </div>
                     <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
                     <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
@@ -252,7 +256,7 @@
     <div class="footer-content">
 
         <div class="footer-brand">
-            <img src="./assets/rayudu-clickz-logo%20(2).png" alt="Rayudu Clickz Logo">
+            <img src="./assets/rayudu-clickz-logo%20(2).webp" alt="Rayudu Clickz Logo" width="1200" height="574" loading="lazy" decoding="async">
             <p>Capturing emotions, preserving memories and creating timeless stories.</p>
         </div>
 
@@ -286,7 +290,7 @@
    rel="noopener noreferrer"
    aria-label="Chat with us on WhatsApp">WhatsApp</a>
 
-<script src="./script.js?v=12"></script>
+<script src="./script.js?v=13" defer></script>
 
 </body>
 </html>
