@@ -82,74 +82,43 @@ videos.forEach(video => {
 
 // =========================================
 // PLAY VIDEO WHEN VISIBLE
-// PAUSE VIDEO WHEN SCROLLED AWAY
+// Load video bytes only when the video approaches the viewport.
 // =========================================
 
+function loadVideoSource(video) {
+    const source = video.querySelector("source[data-src]");
+    if (source && !source.getAttribute("src")) {
+        source.setAttribute("src", source.dataset.src);
+        video.load();
+    }
+}
+
 if ("IntersectionObserver" in window) {
-
     const videoObserver = new IntersectionObserver(entries => {
-
         entries.forEach(entry => {
-
             const video = entry.target;
 
-            if (
-                entry.isIntersecting &&
-                entry.intersectionRatio >= 0.35
-            ) {
-
-                video.play().catch(error => {
-                    console.log("Video playback issue:", error);
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+                loadVideoSource(video);
+                video.play().catch(() => {
+                    // Autoplay may be blocked by browser/device settings.
                 });
-
-            } else {
-
-                video.pause();
-                video.muted = true;
-
+            } } else {
+              video.pause();
             }
-
         });
-
     }, {
         threshold: [0, 0.35, 0.6]
     });
 
+    videos.forEach(video => videoObserver.observe(video));
+} else {
+    // Fallback for older browsers: make the video available for playback.
     videos.forEach(video => {
-        videoObserver.observe(video);
+        loadVideoSource(video);
+        video.play().catch(() => {});
     });
-
 }
-
-
-// =========================================
-// SMOOTH SCROLL
-// =========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function(event) {
-
-        const href = this.getAttribute("href");
-
-        if (!href || href === "#") return;
-
-        const target = document.querySelector(href);
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
 
 
 // =========================================
